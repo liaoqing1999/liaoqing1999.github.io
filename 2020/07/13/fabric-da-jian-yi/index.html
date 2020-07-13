@@ -516,7 +516,7 @@ $ sudo yum makecache fast
 
 $ sudo yum install docker-ce</code></pre><p>查询安装的dockers版本号</p>
 <pre><code>docker --version</code></pre><p>运行结果</p>
-<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200713145644399.png" alt="image-20200713145644399"></p>
+<p><img src="/2020/07/13/fabric-da-jian-yi/docker-version.png" alt> </p>
 <p>此外还可以设置镜像加速、启动和停止等，此次不做说明</p>
 <h3 id="Docker-Compose"><a href="#Docker-Compose" class="headerlink" title="Docker-Compose"></a>Docker-Compose</h3><p>需要使用curl命令下载 docker-compose</p>
 <p>下载curl</p>
@@ -525,13 +525,13 @@ $ sudo yum install docker-ce</code></pre><p>查询安装的dockers版本号</p>
 <p>可以更换1.24.1来安装其他版本</p>
 <pre><code>$ sudo curl -L &quot;https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose</code></pre><p>查看安装好的版本</p>
 <pre><code>docker-compose --version</code></pre><p>运行结果</p>
-<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200713150458709.png" alt="image-20200713150458709"></p>
+<p><img src="/2020/07/13/fabric-da-jian-yi/docker-compose-version.png" alt> </p>
 <p>关于docker常用命令和dockers-compass的用法可以查看上面的参考链接</p>
 <h3 id="Go语言安装"><a href="#Go语言安装" class="headerlink" title="Go语言安装"></a>Go语言安装</h3><p>可以去<a href="https://golang.org/" target="_blank" rel="noopener">go官网</a>查找linux版本的下载路径</p>
 <p>安装参考链接：<a href="https://www.runoob.com/go/go-environment.html" target="_blank" rel="noopener">https://www.runoob.com/go/go-environment.html</a></p>
 <pre><code>wget https://dl.google.com/go/go1.14.4.linux-amd64.tar.gz</code></pre><p>查看下好的压缩包大小</p>
 <pre><code>du -sh go1.14.4.linux-amd64.tar.gz</code></pre><p>运行截图</p>
-<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200713152857839.png" alt="image-20200713152857839"></p>
+<p><img src="/2020/07/13/fabric-da-jian-yi/go-size.png" alt> </p>
 <p>解压命令</p>
 <pre><code>tar -C /usr/local -xzf go1.14.4.linux-amd64.tar.gz</code></pre><p>配置go环境变量</p>
 <pre><code># 打开配置文件
@@ -545,10 +545,10 @@ cd /etc
 #使环境变量生效
 source profile</code></pre><p>查看是否生效</p>
 <pre><code>echo $PATH</code></pre><p>运行结果</p>
-<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200713153513687.png" alt="image-20200713153513687"></p>
+<p><img src="/2020/07/13/fabric-da-jian-yi/go-path.png" alt> </p>
 <p>查看安装的go版本</p>
 <pre><code>go version</code></pre><p>运行结果</p>
-<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200713153546995.png" alt="image-20200713153546995"></p>
+<p><img src="/2020/07/13/fabric-da-jian-yi/go-version.png" alt> </p>
 <h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>至此farbic需要的基础环境都已搭好</p>
 
             </div>
