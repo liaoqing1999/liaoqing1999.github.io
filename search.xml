@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>fabric搭建（一）</title>
+      <link href="/2020/07/13/fabric-da-jian-yi/"/>
+      <url>/2020/07/13/fabric-da-jian-yi/</url>
+      
+        <content type="html"><![CDATA[<h1 id="fabric搭建（一）"><a href="#fabric搭建（一）" class="headerlink" title="fabric搭建（一）"></a>fabric搭建（一）</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近开始学fabric，这几篇博文将记录下，我搭建的过程和出现的一些问题</p><h2 id="参考连接"><a href="#参考连接" class="headerlink" title="参考连接"></a>参考连接</h2><p><a href="https://www.cnblogs.com/aberic/p/7531202.html" target="_blank" rel="noopener">https://www.cnblogs.com/aberic/p/7531202.html</a></p><p><a href="https://hyperledger.github.io/fabric-chaincode-java/release-2.2/api/" target="_blank" rel="noopener">https://hyperledger.github.io/fabric-chaincode-java/release-2.2/api/</a></p><p><a href="https://hyperledger-fabric.readthedocs.io/zh_CN/release-2.0/whatis.html" target="_blank" rel="noopener">https://hyperledger-fabric.readthedocs.io/zh_CN/release-2.0/whatis.html</a></p><h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><h3 id="Docker安装"><a href="#Docker安装" class="headerlink" title="Docker安装"></a>Docker安装</h3><p>用docker来搭建需要的环境</p><p>卸载旧版docker</p><pre><code>$ sudo yum remove docker \ docker-common \ docker-selinux \ docker-engine</code></pre><p>安装docker </p><p>参考链接：<a href="https://www.runoob.com/docker/ubuntu-docker-install.html" target="_blank" rel="noopener">https://www.runoob.com/docker/ubuntu-docker-install.html</a></p><pre><code>$ sudo yum install -y yum-utils device-mapper-persistent-data lvm2$ sudo yum-config-manager \    --add-repo \https://download.docker.com/linux/centos/docker-ce.repo$ sudo yum-config-manager --enable docker-ce-edge$ sudo yum-config-manager --enable docker-ce-test$ sudo yum-config-manager --disable docker-ce-edge$ sudo yum makecache fast$ sudo yum install docker-ce</code></pre><p>查询安装的dockers版本号</p><pre><code>docker --version</code></pre><p>运行结果</p><p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200713145644399.png" alt="image-20200713145644399"></p><p>此外还可以设置镜像加速、启动和停止等，此次不做说明</p><h3 id="Docker-Compose"><a href="#Docker-Compose" class="headerlink" title="Docker-Compose"></a>Docker-Compose</h3><p>需要使用curl命令下载 docker-compose</p><p>下载curl</p><pre><code>yum install curl</code></pre><p>安装Compose</p><p>参考链接：<a href="https://www.runoob.com/docker/docker-compose.html" target="_blank" rel="noopener">https://www.runoob.com/docker/docker-compose.html</a></p><p>可以更换1.24.1来安装其他版本</p><pre><code>$ sudo curl -L &quot;https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose</code></pre><p>查看安装好的版本</p><pre><code>docker-compose --version</code></pre><p>运行结果</p><p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200713150458709.png" alt="image-20200713150458709"></p><p>关于docker常用命令和dockers-compass的用法可以查看上面的参考链接</p><h3 id="Go语言安装"><a href="#Go语言安装" class="headerlink" title="Go语言安装"></a>Go语言安装</h3><p>可以去<a href="https://golang.org/" target="_blank" rel="noopener">go官网</a>查找linux版本的下载路径</p><p>安装参考链接：<a href="https://www.runoob.com/go/go-environment.html" target="_blank" rel="noopener">https://www.runoob.com/go/go-environment.html</a></p><pre><code>wget https://dl.google.com/go/go1.14.4.linux-amd64.tar.gz</code></pre><p>查看下好的压缩包大小</p><pre><code>du -sh go1.14.4.linux-amd64.tar.gz</code></pre><p>运行截图</p><p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200713152857839.png" alt="image-20200713152857839"></p><p>解压命令</p><pre><code>tar -C /usr/local -xzf go1.14.4.linux-amd64.tar.gz</code></pre><p>配置go环境变量</p><pre><code># 打开配置文件vi /etc/profile# 文件末尾加上export PATH=$PATH:/usr/local/go/binexport GOPATH=/opt/gopath</code></pre><p>修改完成后 执行</p><pre><code># 进入etc目录cd /etc#使环境变量生效source profile</code></pre><p>查看是否生效</p><pre><code>echo $PATH</code></pre><p>运行结果</p><p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200713153513687.png" alt="image-20200713153513687"></p><p>查看安装的go版本</p><pre><code>go version</code></pre><p>运行结果</p><p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200713153546995.png" alt="image-20200713153546995"></p><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>至此farbic需要的基础环境都已搭好</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Fabric </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Fabric </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Idea快捷键</title>
       <link href="/2020/07/04/idea-kuai-jie-jian/"/>
       <url>/2020/07/04/idea-kuai-jie-jian/</url>
