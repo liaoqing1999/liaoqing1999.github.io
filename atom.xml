@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://liaoqing1999.github.io/"/>
-  <updated>2020-07-13T09:35:42.915Z</updated>
+  <updated>2020-07-15T02:03:47.402Z</updated>
   <id>http://liaoqing1999.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>fabric搭建（二）</title>
+    <link href="http://liaoqing1999.github.io/2020/07/14/fabric-da-jian-er/"/>
+    <id>http://liaoqing1999.github.io/2020/07/14/fabric-da-jian-er/</id>
+    <published>2020-07-14T01:05:18.000Z</published>
+    <updated>2020-07-15T02:03:47.402Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;fabric搭建（二）&quot;&gt;&lt;a href=&quot;#fabric搭建（二）&quot; class=&quot;headerlink&quot; title=&quot;fabric搭建（二）&quot;&gt;&lt;/a&gt;fabric搭建（二）&lt;/h1&gt;&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Fabric" scheme="http://liaoqing1999.github.io/categories/Fabric/"/>
+    
+    
+      <category term="Fabric" scheme="http://liaoqing1999.github.io/tags/Fabric/"/>
+    
+  </entry>
   
   <entry>
     <title>fabric搭建（一）</title>

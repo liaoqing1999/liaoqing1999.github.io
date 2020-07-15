@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>fabric搭建（二）</title>
+      <link href="/2020/07/14/fabric-da-jian-er/"/>
+      <url>/2020/07/14/fabric-da-jian-er/</url>
+      
+        <content type="html"><![CDATA[<h1 id="fabric搭建（二）"><a href="#fabric搭建（二）" class="headerlink" title="fabric搭建（二）"></a>fabric搭建（二）</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>上一节我们搭建了fabric所需要的基本环境 docker、docker-compose、go语言环境等，今天进行Fabric源码及镜像文件处理</p><h2 id="参考连接"><a href="#参考连接" class="headerlink" title="参考连接"></a>参考连接</h2><p><a href="https://www.cnblogs.com/aberic/p/7532114.html" target="_blank" rel="noopener">https://www.cnblogs.com/aberic/p/7532114.html</a></p><p><a href="https://hyperledger.github.io/fabric-chaincode-java/release-2.2/api/" target="_blank" rel="noopener">https://hyperledger.github.io/fabric-chaincode-java/release-2.2/api/</a></p><p><a href="https://hyperledger-fabric.readthedocs.io/zh_CN/release-2.0/whatis.html" target="_blank" rel="noopener">https://hyperledger-fabric.readthedocs.io/zh_CN/release-2.0/whatis.html</a></p><h2 id="Fabric源码及镜像文件处理"><a href="#Fabric源码及镜像文件处理" class="headerlink" title="Fabric源码及镜像文件处理"></a>Fabric源码及镜像文件处理</h2><h3 id="下载Fabric源码"><a href="#下载Fabric源码" class="headerlink" title="下载Fabric源码"></a>下载Fabric源码</h3><p>首先我们需要去到昨天下的go语言目录，因为下载的fabric列子和工具都需要go的环境</p><p>通过命令</p><pre><code>echo $GOPATH</code></pre><p>可以查看运行go的位置</p><p>运行结果</p><p><img src="/2020/07/14/fabric-da-jian-er/go-path.png" alt> </p><p>在去到刚刚go的目录</p><pre><code>cd /opt/gopath</code></pre><p>接下来需要用git下载源码，可以省事用下面的命令</p><pre><code>go get github.com/hyperledger/fabric</code></pre><p>如果没有git环境的话，请跳至<a href="###Git安装">Git安装</a></p><p>安装好了之后 进入到项目的目录，切换分支  可以根据自己的要求切换分支</p><pre><code>cd /opt/gopath/src/github.com/hyperledger/fabric/git checkout -b release-2.2 </code></pre><p>项目文件结构<br><img src="/2020/07/14/fabric-da-jian-er/fabric-file.png" alt> </p><h3 id="Git安装"><a href="#Git安装" class="headerlink" title="Git安装"></a>Git安装</h3><p>当你的linux上没有git时，我们需要安装git来完成某些拉取的功能</p><p>参考链接：<a href="https://git-scm.com/book/zh/v2/起步-安装-Git" target="_blank" rel="noopener">https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git</a></p><p><a href="https://www.cnblogs.com/wulixia/p/11016684.html" target="_blank" rel="noopener">https://www.cnblogs.com/wulixia/p/11016684.html</a></p><p>我采用的yum安装</p><pre><code>yum -y install gitgit --version</code></pre><p>运行结果<br><img src="/2020/07/14/fabric-da-jian-er/git-version.png" alt> </p><h3 id="下载Fabric相关镜像文件"><a href="#下载Fabric相关镜像文件" class="headerlink" title="下载Fabric相关镜像文件"></a>下载Fabric相关镜像文件</h3><p>本质上我们可以直接利用在/opt/gopath/src/github.com/hyperledger/fabric/scripts目录下有一个bootstrap-1.0.0.sh脚本文件，事实上如果外网访问条件优越的情况下，直接运行该脚本即可下载所有所需的fabric镜像文件及官方指定所需的二进制文件。</p><pre><code>cd /opt/gopath/src/github.com/hyperledger/fabric/scripts./bootstrap.sh </code></pre><p>网络不好的情况下考虑下面的做法</p><p>利用docker下载fabric镜像</p><pre><code>#后面的版本号可以不填 默认最新 但是用最新的可能会有pull出错的情况docker pull hyperledger/fabric-peer:2.2docker pull hyperledger/fabric-tools:2.2docker pull hyperledger/fabric-orderer:2.2docker pull hyperledger/fabric-couchdb:amd64-0.4docker pull hyperledger/fabric-kafka:amd64-0.4docker pull hyperledger/fabric-ca:1.4docker pull hyperledger/fabric-zookeeper:amd64-0.4docker pull hyperledger/fabric-baseos:2.2常用镜像hyperledger/fabric-peerhyperledger/fabric-toolshyperledger/fabric-ordererhyperledger/fabric-couchdbhyperledger/fabric-kafkahyperledger/fabric-cahyperledger/fabric-zookeeperhyperledger/fabric-baseos</code></pre><p>为了方便docker-compose的配置，我们将所有的镜像tag都改为latest，执行如下格式的命令：</p><pre><code>docker tag IMAGEID(镜像id) REPOSITORY:TAG（仓库：标签）docker tag 5eb2356665e7 docker.io/hyperledger/fabric-tools:latestdocker tag 760f304a3282 docker.io/hyperledger/fabric-peer:latestdocker tag 5fb8e97da88d docker.io/hyperledger/fabric-orderer:latestdocker tag aa2bdf8013af docker.io/hyperledger/fabric-baseos:latestdocker tag bbcd552150f4 docker.io/hyperledger/fabric-zookeeper:latestdocker tag 7e0396b6d64e docker.io/hyperledger/fabric-kafka:latestdocker tag b967e8b98b6b docker.io/hyperledger/fabric-couchdb:latestdocker tag 743a758fae29 docker.io/hyperledger/fabric-ca:latest</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Fabric </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Fabric </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>fabric搭建（一）</title>
       <link href="/2020/07/13/fabric-da-jian-yi/"/>
       <url>/2020/07/13/fabric-da-jian-yi/</url>
