@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Chrome浏览器快捷键, 个人博客">
+    <meta name="keywords" content="vue常见问题, 个人博客">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Chrome浏览器快捷键 | 个人博客</title>
+    <title>vue常见问题 | 个人博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -309,12 +309,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Chrome浏览器快捷键</h1>
+                    <h1 class="description center-align post-title">vue常见问题</h1>
                 </div>
             </div>
         </div>
@@ -431,8 +431,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Chrome/">
-                                <span class="chip bg-color">Chrome</span>
+                            <a href="/tags/vue/">
+                                <span class="chip bg-color">vue</span>
                             </a>
                         
                     </div>
@@ -443,8 +443,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Chrome/" class="post-category">
-                                Chrome
+                            <a href="/categories/Idea/" class="post-category">
+                                Idea
                             </a>
                         
                     </div>
@@ -456,28 +456,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-04
+                    2020-07-15
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-07-04
+                    2020-07-16
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    264
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    4 分
                 </div>
                 
 
@@ -492,8 +492,71 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Chrome浏览器快捷键"><a href="#Chrome浏览器快捷键" class="headerlink" title="Chrome浏览器快捷键"></a>Chrome浏览器快捷键</h1><p>打开新窗口 Ctrl + n<br>在无痕模式下打开新窗口 Ctrl + Shift + n<br>打开新的标签页，并跳转到该标签页 Ctrl + t<br>重新打开最后关闭的标签页，并跳转到该标签页 Ctrl + Shift + t<br>跳转到特定标签页 Ctrl + 1 到 Ctrl + 8<br>跳转到最后一个标签页 Ctrl + 9<br>在当前标签页中打开主页 Alt + Home<br>打开当前标签页浏览记录中记录的上一个页面 Alt + 向左箭头键<br>打开当前标签页浏览记录中记录的下一个页面 Alt + 向右箭头键<br>关闭当前窗口 Ctrl + Shift + w<br>最小化当前窗口 Alt + 空格键 + n<br>全屏 F11<br>打开书签管理器 Ctrl + Shift + o<br>在新标签页中打开“历史记录”页 Ctrl + h<br>在新标签页中打开“下载内容”页 Ctrl + j<br>打开 Chrome 任务管理器 Shift + Esc<br>打开“清除浏览数据”选项 Ctrl + Shift + Delete<br>使用其他帐号登录或以访客身份浏览 Ctrl + Shift + m</p>
+                <h1 id="vue常见问题"><a href="#vue常见问题" class="headerlink" title="vue常见问题"></a>vue常见问题</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>这个系列的博客将记录我在vue中遇到的一些问题和解决思路</p>
+<h2 id="vue变量复制"><a href="#vue变量复制" class="headerlink" title="vue变量复制"></a>vue变量复制</h2><p>参考链接：<a href="https://blog.csdn.net/weixin_42693164/article/details/102546335" target="_blank" rel="noopener">https://blog.csdn.net/weixin_42693164/article/details/102546335</a></p>
+<p>我在使用vue变量的传递时出现了下面的问题</p>
+<pre><code>//我们有两个对象 a,b  都有一个x的属性
+//初始化
+this.a = {x:1}
+this.b = {x:2} 
+console.log(this.a,this.b) //{x: 1} {x: 2}
+this.a = this.b
+console.log(this.a,this.b) //{x: 2} {x: 2}
+this.b.x =10
+console.log(this.a,this.b) //{x: 10} {x: 10}
+this.a.x =11
+console.log(this.a,this.b) //{x: 11} {x: 11}</code></pre><p>可以发现 当我们把b赋值给a时，后续对a或者b的修改 都会影响到另外一个变量</p>
+<p>但是如果是基本类型 就不会有这种现象，如字符串类型或者整形</p>
+<p>出现这种情况的原因是js的浅复制和深复制</p>
+<p>首先复习一下，在js中有两种数据类型</p>
+<pre><code>（1） 基本数据类型：number、string、boolean、null、undefined、symbol（ES6）
+（2） 引用数据类型：object、function（函数实际也是对象）</code></pre><p>其次js有两种内存模式</p>
+<pre><code>（1）栈内存：空间小，有默认大小
+（2）堆内存：空间大，可以自适应大小
+所以从他们的特点很容易看出栈内存一般用于存储基本数据类型，而堆内存一般用于存储引用数据类型</code></pre><p>我们知道一般的js都是在栈中由上至下执行的（有一些资料显示，js并没有从严格意义上去区分栈和堆，在一些场景下也是有所区分的，例如：浅复制和深复制），而堆内存的数据一般是在栈内存存了一个地址指向对应的堆内存，js执行的时候便通过这个地址来找到对应的堆内存和数据</p>
+<p>所以这个问题便知道了发生的原因，我们在进行引用数据类型的复制时，直接将引用数据类型赋给了另外一个引用数据类型，那么实际在栈中，只是简单的复制了一下栈中存放的地址，并不是这个对象实际的值，同一个地址指向的当然就是同一个值。所以改了一个，另外一个也会发生变化。这个也被称为浅复制。</p>
+<p>如何解决：深复制</p>
+<pre><code>最简单的深复制
+var a = JSON.parse(JSON.stringify(b))</code></pre><p>这个实际就是利用JSON.stringify（obj）将对象的内容转换成字符串，那么在栈内存中就会给他一个空间存储，之后这个字符串想去外面的世界看看有多精彩，通过JSON.parse还原回原来的对象，带着家一起出走到了堆内存中，在栈内存中留下了联系方式（地址），从而实现了深复制。</p>
+<p>注意：JSON.parse(JSON.stringify(obj))不能复制函数类型，obj也是要可以枚举才行，在IE7以下浏览器会报错</p>
+<pre><code>递归方法实现深复制
 
+//递归的方法:
+
+function deepClone(ob) {
+    //根据不同对象类型赋值
+    let cloneObj= Array.isArray(obj)?[]:{}
+    //传入值不能为空且为对象类型
+    if(obj &amp; typeof obj === &quot;object&quot; ){
+    //对象的遍历方法
+        for(key in obJ){
+            //bj. hasOwnProperty (key)是验证对象自身属性中是否有指定的属性，会忽略掉原型链上继承的属性
+            //在遍历对象时要包略维承属性，因为for... in循环只能遍历到可枚举属性(一般默认enumerable=true )
+            //如果检测一个对象任意属性可以用obj. prototype. hasOwmProperty (key)
+            1f (obj.hasOmnProperty (key)){
+                //判断子元素是否为对象
+                if(obj,[key]&amp;&amp;typeof obj[key] === &quot;object&quot;){
+                    //执行递归
+                    cloneObj = deepClone(obj[key])
+                }else{
+                    //不是就直按赋值
+                    clone0bj = obyfkey]
+                }
+            }
+        }
+    }
+    //返回结果
+    return cloneObj
+}
+</code></pre><p>特别说明：对于js基本数据类型的赋值谈不上是深复制,因为每每声明一个变量时，栈内存中就会给其一个固定空间，如下面的a和b，实际他们两个都在各自的空间，空间里面都放着实际值，互不干扰。</p>
+<p>番外：Null的数据类型实际是object类型，为何会在基本数据类型里面呢？？？<br>查看资料很多都说是一个将错就错的bug<br>实际想一下，很多关于提高性能的书里面都有提到一个“对象不用时就obj=null“，这是因为浏览器有一个垃圾回收机制，当检测到这原有的堆内存没有被占用了就会被销毁，null就相当于一个对象的空地址,值就是固定的，占用空间是固定的，这可能就是将错就错的原因，没有用的全局对象不手动销毁，浏览器在不能检测这个变量何时不再使用，就不会销毁，会造成内存泄漏。</p>
+<h2 id="vue-alert问题"><a href="#vue-alert问题" class="headerlink" title="vue alert问题"></a>vue alert问题</h2><pre><code>//有时候我们在vue里面直接写
+alert(&quot;hello&quot;)
+//是不起效果的
+//我们可以更改写法
+widow.alert(&quot;hello&quot;)
+//这样是有效果的
+//原因是vue this的指向问题</code></pre>
             </div>
             <hr/>
 
@@ -518,7 +581,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://liaoqing1999.github.io/2020/07/04/chrome-liu-lan-qi-kuai-jie-jian/">http://liaoqing1999.github.io/2020/07/04/chrome-liu-lan-qi-kuai-jie-jian/</a>
+                    <a href="http://liaoqing1999.github.io/2020/07/15/vue-chang-jian-wen-ti/">http://liaoqing1999.github.io/2020/07/15/vue-chang-jian-wen-ti/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -556,8 +619,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Chrome/">
-                                    <span class="chip bg-color">Chrome</span>
+                                <a href="/tags/vue/">
+                                    <span class="chip bg-color">vue</span>
                                 </a>
                             
                         </div>
@@ -725,29 +788,32 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/07/04/idea-kuai-jie-jian/">
+                <a href="/2020/07/15/vue-chang-jian-wen-ti/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Idea快捷键">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="vue常见问题">
                         
-                        <span class="card-title">Idea快捷键</span>
+                        <span class="card-title">vue常见问题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Idea快捷键基础Ctrl+Shift + Enter，语句完成“！”，否定完成，输入表达式时按 “！”键Ctrl+E，最近的文件Ctrl+Shift+E，最近更改的文件Shift+Click，可以关闭文件Ctrl+[ OR ]，可以跑到大
+                            vue常见问题前言这个系列的博客将记录我在vue中遇到的一些问题和解决思路
+vue变量复制参考链接：https://blog.csdn.net/weixin_42693164/article/details/102546335
+我在使用vu
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-04
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-15
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -760,11 +826,12 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Idea/">
-                        <span class="chip bg-color">Idea</span>
+                    <a href="/tags/vue/">
+                        <span class="chip bg-color">vue</span>
                     </a>
                     
                 </div>
@@ -778,31 +845,32 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/07/04/eclipse-chang-yong-kuai-jie-jian/">
+                <a href="/2020/07/14/fabric-da-jian-er/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="eclipse常用快捷键">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="fabric搭建（二）">
                         
-                        <span class="card-title">eclipse常用快捷键</span>
+                        <span class="card-title">fabric搭建（二）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            eclipse常用快捷键编辑Ctrl+1    快速修复（最经典的快捷键,就不用多说了，可以解决很多问题，比如import类、try catch包围等）Ctrl+Shift+F    格式化当前代码Ctrl+Shift+M    添加类的i
+                            fabric搭建（二）前言上一节我们搭建了fabric所需要的基本环境 docker、docker-compose、go语言环境等，今天进行Fabric源码及镜像文件处理
+参考连接https://www.cnblogs.com/aberic
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-04
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-14
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/eclipse/" class="post-category">
-                                    eclipse
+                            <a href="/categories/Fabric/" class="post-category">
+                                    Fabric
                                 </a>
                             
                             
@@ -812,8 +880,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/eclipse/">
-                        <span class="chip bg-color">eclipse</span>
+                    <a href="/tags/Fabric/">
+                        <span class="chip bg-color">Fabric</span>
                     </a>
                     
                 </div>

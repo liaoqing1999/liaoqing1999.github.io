@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Chrome浏览器快捷键, 个人博客">
+    <meta name="keywords" content="fabric搭建（二）, 个人博客">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Chrome浏览器快捷键 | 个人博客</title>
+    <title>fabric搭建（二） | 个人博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -309,12 +309,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Chrome浏览器快捷键</h1>
+                    <h1 class="description center-align post-title">fabric搭建（二）</h1>
                 </div>
             </div>
         </div>
@@ -431,8 +431,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Chrome/">
-                                <span class="chip bg-color">Chrome</span>
+                            <a href="/tags/Fabric/">
+                                <span class="chip bg-color">Fabric</span>
                             </a>
                         
                     </div>
@@ -443,8 +443,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Chrome/" class="post-category">
-                                Chrome
+                            <a href="/categories/Fabric/" class="post-category">
+                                Fabric
                             </a>
                         
                     </div>
@@ -456,28 +456,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-04
+                    2020-07-14
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-07-04
+                    2020-07-15
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    264
+                    682
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -492,8 +492,58 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Chrome浏览器快捷键"><a href="#Chrome浏览器快捷键" class="headerlink" title="Chrome浏览器快捷键"></a>Chrome浏览器快捷键</h1><p>打开新窗口 Ctrl + n<br>在无痕模式下打开新窗口 Ctrl + Shift + n<br>打开新的标签页，并跳转到该标签页 Ctrl + t<br>重新打开最后关闭的标签页，并跳转到该标签页 Ctrl + Shift + t<br>跳转到特定标签页 Ctrl + 1 到 Ctrl + 8<br>跳转到最后一个标签页 Ctrl + 9<br>在当前标签页中打开主页 Alt + Home<br>打开当前标签页浏览记录中记录的上一个页面 Alt + 向左箭头键<br>打开当前标签页浏览记录中记录的下一个页面 Alt + 向右箭头键<br>关闭当前窗口 Ctrl + Shift + w<br>最小化当前窗口 Alt + 空格键 + n<br>全屏 F11<br>打开书签管理器 Ctrl + Shift + o<br>在新标签页中打开“历史记录”页 Ctrl + h<br>在新标签页中打开“下载内容”页 Ctrl + j<br>打开 Chrome 任务管理器 Shift + Esc<br>打开“清除浏览数据”选项 Ctrl + Shift + Delete<br>使用其他帐号登录或以访客身份浏览 Ctrl + Shift + m</p>
-
+                <h1 id="fabric搭建（二）"><a href="#fabric搭建（二）" class="headerlink" title="fabric搭建（二）"></a>fabric搭建（二）</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>上一节我们搭建了fabric所需要的基本环境 docker、docker-compose、go语言环境等，今天进行Fabric源码及镜像文件处理</p>
+<h2 id="参考连接"><a href="#参考连接" class="headerlink" title="参考连接"></a>参考连接</h2><p><a href="https://www.cnblogs.com/aberic/p/7532114.html" target="_blank" rel="noopener">https://www.cnblogs.com/aberic/p/7532114.html</a></p>
+<p><a href="https://hyperledger.github.io/fabric-chaincode-java/release-2.2/api/" target="_blank" rel="noopener">https://hyperledger.github.io/fabric-chaincode-java/release-2.2/api/</a></p>
+<p><a href="https://hyperledger-fabric.readthedocs.io/zh_CN/release-2.0/whatis.html" target="_blank" rel="noopener">https://hyperledger-fabric.readthedocs.io/zh_CN/release-2.0/whatis.html</a></p>
+<h2 id="Fabric源码及镜像文件处理"><a href="#Fabric源码及镜像文件处理" class="headerlink" title="Fabric源码及镜像文件处理"></a>Fabric源码及镜像文件处理</h2><h3 id="下载Fabric源码"><a href="#下载Fabric源码" class="headerlink" title="下载Fabric源码"></a>下载Fabric源码</h3><p>首先我们需要去到昨天下的go语言目录，因为下载的fabric列子和工具都需要go的环境</p>
+<p>通过命令</p>
+<pre><code>echo $GOPATH</code></pre><p>可以查看运行go的位置</p>
+<p>运行结果</p>
+<p><img src="/2020/07/14/fabric-da-jian-er/go-path.png" alt> </p>
+<p>在去到刚刚go的目录</p>
+<pre><code>cd /opt/gopath</code></pre><p>接下来需要用git下载源码，可以省事用下面的命令</p>
+<pre><code>go get github.com/hyperledger/fabric</code></pre><p>如果没有git环境的话，请跳至<a href="###Git安装">Git安装</a></p>
+<p>安装好了之后 进入到项目的目录，切换分支  可以根据自己的要求切换分支</p>
+<pre><code>cd /opt/gopath/src/github.com/hyperledger/fabric/
+git checkout -b release-2.2 </code></pre><p>项目文件结构<br><img src="/2020/07/14/fabric-da-jian-er/fabric-file.png" alt> </p>
+<h3 id="Git安装"><a href="#Git安装" class="headerlink" title="Git安装"></a>Git安装</h3><p>当你的linux上没有git时，我们需要安装git来完成某些拉取的功能</p>
+<p>参考链接：<a href="https://git-scm.com/book/zh/v2/起步-安装-Git" target="_blank" rel="noopener">https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git</a></p>
+<p><a href="https://www.cnblogs.com/wulixia/p/11016684.html" target="_blank" rel="noopener">https://www.cnblogs.com/wulixia/p/11016684.html</a></p>
+<p>我采用的yum安装</p>
+<pre><code>yum -y install git
+git --version</code></pre><p>运行结果<br><img src="/2020/07/14/fabric-da-jian-er/git-version.png" alt> </p>
+<h3 id="下载Fabric相关镜像文件"><a href="#下载Fabric相关镜像文件" class="headerlink" title="下载Fabric相关镜像文件"></a>下载Fabric相关镜像文件</h3><p>本质上我们可以直接利用在/opt/gopath/src/github.com/hyperledger/fabric/scripts目录下有一个bootstrap-1.0.0.sh脚本文件，事实上如果外网访问条件优越的情况下，直接运行该脚本即可下载所有所需的fabric镜像文件及官方指定所需的二进制文件。</p>
+<pre><code>cd /opt/gopath/src/github.com/hyperledger/fabric/scripts
+./bootstrap.sh </code></pre><p>网络不好的情况下考虑下面的做法</p>
+<p>利用docker下载fabric镜像</p>
+<pre><code>#后面的版本号可以不填 默认最新 但是用最新的可能会有pull出错的情况
+docker pull hyperledger/fabric-peer:2.2
+docker pull hyperledger/fabric-tools:2.2
+docker pull hyperledger/fabric-orderer:2.2
+docker pull hyperledger/fabric-couchdb:amd64-0.4
+docker pull hyperledger/fabric-kafka:amd64-0.4
+docker pull hyperledger/fabric-ca:1.4
+docker pull hyperledger/fabric-zookeeper:amd64-0.4
+docker pull hyperledger/fabric-baseos:2.2
+常用镜像
+hyperledger/fabric-peer
+hyperledger/fabric-tools
+hyperledger/fabric-orderer
+hyperledger/fabric-couchdb
+hyperledger/fabric-kafka
+hyperledger/fabric-ca
+hyperledger/fabric-zookeeper
+hyperledger/fabric-baseos</code></pre><p>为了方便docker-compose的配置，我们将所有的镜像tag都改为latest，执行如下格式的命令：</p>
+<pre><code>docker tag IMAGEID(镜像id) REPOSITORY:TAG（仓库：标签）
+docker tag 5eb2356665e7 docker.io/hyperledger/fabric-tools:latest
+docker tag 760f304a3282 docker.io/hyperledger/fabric-peer:latest
+docker tag 5fb8e97da88d docker.io/hyperledger/fabric-orderer:latest
+docker tag aa2bdf8013af docker.io/hyperledger/fabric-baseos:latest
+docker tag bbcd552150f4 docker.io/hyperledger/fabric-zookeeper:latest
+docker tag 7e0396b6d64e docker.io/hyperledger/fabric-kafka:latest
+docker tag b967e8b98b6b docker.io/hyperledger/fabric-couchdb:latest
+docker tag 743a758fae29 docker.io/hyperledger/fabric-ca:latest</code></pre>
             </div>
             <hr/>
 
@@ -518,7 +568,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://liaoqing1999.github.io/2020/07/04/chrome-liu-lan-qi-kuai-jie-jian/">http://liaoqing1999.github.io/2020/07/04/chrome-liu-lan-qi-kuai-jie-jian/</a>
+                    <a href="http://liaoqing1999.github.io/2020/07/14/fabric-da-jian-er/">http://liaoqing1999.github.io/2020/07/14/fabric-da-jian-er/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -556,8 +606,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Chrome/">
-                                    <span class="chip bg-color">Chrome</span>
+                                <a href="/tags/Fabric/">
+                                    <span class="chip bg-color">Fabric</span>
                                 </a>
                             
                         </div>
@@ -729,24 +779,26 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/07/04/idea-kuai-jie-jian/">
+                <a href="/2020/07/15/vue-chang-jian-wen-ti/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Idea快捷键">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="vue常见问题">
                         
-                        <span class="card-title">Idea快捷键</span>
+                        <span class="card-title">vue常见问题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Idea快捷键基础Ctrl+Shift + Enter，语句完成“！”，否定完成，输入表达式时按 “！”键Ctrl+E，最近的文件Ctrl+Shift+E，最近更改的文件Shift+Click，可以关闭文件Ctrl+[ OR ]，可以跑到大
+                            vue常见问题前言这个系列的博客将记录我在vue中遇到的一些问题和解决思路
+vue变量复制参考链接：https://blog.csdn.net/weixin_42693164/article/details/102546335
+我在使用vu
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-04
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-15
                         </span>
                         <span class="publish-author">
                             
@@ -763,8 +815,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Idea/">
-                        <span class="chip bg-color">Idea</span>
+                    <a href="/tags/vue/">
+                        <span class="chip bg-color">vue</span>
                     </a>
                     
                 </div>
@@ -778,31 +830,33 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/07/04/eclipse-chang-yong-kuai-jie-jian/">
+                <a href="/2020/07/13/fabric-da-jian-yi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="eclipse常用快捷键">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="fabric搭建（一）">
                         
-                        <span class="card-title">eclipse常用快捷键</span>
+                        <span class="card-title">fabric搭建（一）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            eclipse常用快捷键编辑Ctrl+1    快速修复（最经典的快捷键,就不用多说了，可以解决很多问题，比如import类、try catch包围等）Ctrl+Shift+F    格式化当前代码Ctrl+Shift+M    添加类的i
+                            fabric搭建（一）前言最近开始学fabric，这几篇博文将记录下，我搭建的过程和出现的一些问题
+参考连接https://www.cnblogs.com/aberic/p/7531202.html
+https://hyperledger.
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-04
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-13
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/eclipse/" class="post-category">
-                                    eclipse
+                            <a href="/categories/Fabric/" class="post-category">
+                                    Fabric
                                 </a>
                             
                             
@@ -812,8 +866,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/eclipse/">
-                        <span class="chip bg-color">eclipse</span>
+                    <a href="/tags/Fabric/">
+                        <span class="chip bg-color">Fabric</span>
                     </a>
                     
                 </div>

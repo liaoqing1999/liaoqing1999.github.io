@@ -41,7 +41,7 @@ external_link:
   exclude: ''
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true
 relative_link: false
 future: true
 highlight:
@@ -126,5 +126,6 @@ feed:
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:liaoqing1999/liaoqing1999.github.io.git
+  ##repo: git@github.com:liaoqing1999/liaoqing1999.github.io.git
+  repository: https://github.com/liaoqing1999/liaoqing1999.github.io.git
   branch: master
