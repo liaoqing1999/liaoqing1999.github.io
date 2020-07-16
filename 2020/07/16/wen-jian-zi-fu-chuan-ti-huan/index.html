@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="fabric搭建（一）, 个人博客">
+    <meta name="keywords" content="文件字符串替换, 个人博客">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>fabric搭建（一） | 个人博客</title>
+    <title>文件字符串替换 | 个人博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -309,12 +309,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">fabric搭建（一）</h1>
+                    <h1 class="description center-align post-title">文件字符串替换</h1>
                 </div>
             </div>
         </div>
@@ -431,8 +431,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Fabric/">
-                                <span class="chip bg-color">Fabric</span>
+                            <a href="/tags/%E8%84%9A%E6%9C%AC/">
+                                <span class="chip bg-color">脚本</span>
                             </a>
                         
                     </div>
@@ -443,8 +443,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Fabric/" class="post-category">
-                                Fabric
+                            <a href="/categories/%E8%84%9A%E6%9C%AC/" class="post-category">
+                                脚本
                             </a>
                         
                     </div>
@@ -456,28 +456,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-13
+                    2020-07-16
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-07-13
+                    2020-07-16
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    504
+                    728
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    3 分
                 </div>
                 
 
@@ -492,65 +492,105 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="fabric搭建（一）"><a href="#fabric搭建（一）" class="headerlink" title="fabric搭建（一）"></a>fabric搭建（一）</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近开始学fabric，这几篇博文将记录下，我搭建的过程和出现的一些问题</p>
-<h2 id="参考连接"><a href="#参考连接" class="headerlink" title="参考连接"></a>参考连接</h2><p><a href="https://www.cnblogs.com/aberic/p/7531202.html" target="_blank" rel="noopener">https://www.cnblogs.com/aberic/p/7531202.html</a></p>
-<p><a href="https://hyperledger.github.io/fabric-chaincode-java/release-2.2/api/" target="_blank" rel="noopener">https://hyperledger.github.io/fabric-chaincode-java/release-2.2/api/</a></p>
-<p><a href="https://hyperledger-fabric.readthedocs.io/zh_CN/release-2.0/whatis.html" target="_blank" rel="noopener">https://hyperledger-fabric.readthedocs.io/zh_CN/release-2.0/whatis.html</a></p>
-<h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><h3 id="Docker安装"><a href="#Docker安装" class="headerlink" title="Docker安装"></a>Docker安装</h3><p>用docker来搭建需要的环境</p>
-<p>卸载旧版docker</p>
-<pre><code>$ sudo yum remove docker \ docker-common \ docker-selinux \ docker-engine</code></pre><p>安装docker </p>
-<p>参考链接：<a href="https://www.runoob.com/docker/ubuntu-docker-install.html" target="_blank" rel="noopener">https://www.runoob.com/docker/ubuntu-docker-install.html</a></p>
-<pre><code>$ sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+                <h1 id="文件字符串替换脚本"><a href="#文件字符串替换脚本" class="headerlink" title="文件字符串替换脚本"></a>文件字符串替换脚本</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>由于在工作中会遇到一些文件的处理问题或者其他可以使用脚本完成的工作，这个系列将记录一些我用到过的脚本</p>
+<h2 id="文件夹下所有文件替换某个字符串"><a href="#文件夹下所有文件替换某个字符串" class="headerlink" title="文件夹下所有文件替换某个字符串"></a>文件夹下所有文件替换某个字符串</h2><p>有个需求，我们需要替换某个目录下，所有文件下面的某个字符串，我们采用python来制作这个脚本</p>
+<p>精简模式</p>
+<p>这个脚本将该脚本目录下，所有文件中的“souceStr”替换成用户输入的destStr，可以自己根据需要手动更改相关地方</p>
+<pre><code>#!/usr/bin/python
+# -*- coding:utf8 -*-
 
-$ sudo yum-config-manager \
-    --add-repo \
-https://download.docker.com/linux/centos/docker-ce.repo
+import os
+import re
 
-$ sudo yum-config-manager --enable docker-ce-edge
+def replace(path, souceStr, destStr):
+    #读取目录下所有文件
+    files = os.listdir(path)
+    #遍历这些文件
+    for f in files:
+        #如果文件名等于该脚本的名字 不执行
+        if f == os.path.basename(__file__):
+            continue
+        #如果文件是一个目录 执行递归
+        elif os.path.isdir(path + &#39;/&#39; + f):
+            replace(path+ &#39;/&#39; + f, souceStr, destStr)
+        #否则 是一个文件
+        else:
+            filePath = path+&#39;/&#39;+f
+            f=open(filePath,&#39;r&#39;)
+            #读出该文件所有的行
+            alllines=f.readlines()
+            f.close()
+            f=open(filePath,&#39;w+&#39;)
+            #对所有的行进行循环
+            for eachline in alllines:
+                #替换字符串
+                a=re.sub(souceStr,destStr,eachline)
+                f.writelines(a)
+            f.close()
 
-$ sudo yum-config-manager --enable docker-ce-test
+replace(&#39;./&#39;, &quot;souceStr&quot;, input(&quot;please input destStr, rember to add &#39; at the beginning and end :&quot;))
+</code></pre><p>详细模式</p>
+<p>这个脚本和上一个脚本是一样的，只是添加了一些输出和隐藏文件夹的判断，可以根据需要更改相应变量</p>
+<pre><code>#!/usr/bin/python  
+# -*- coding:utf8 -*-  
 
-$ sudo yum-config-manager --disable docker-ce-edge
+import os  
+import re
+totalFile = 0 
+print os.path.basename(__file__) 
+def replace(path,str1,str2):
+    # 返回一个列表，其中包含在目录条目的名称(google翻译)  
+    files = os.listdir(path)    
+    for f in files:  
+        if(os.path.isdir(path + &#39;/&#39; + f)):  
+            # 排除隐藏文件夹。因为隐藏文件夹过多  
+            if(f[0] == &#39;.&#39;):  
+                pass  
+            else:  
+                # 进入下一层文件夹  
+                replace(path+ &#39;/&#39; + f,str1,str2)  
+        if(os.path.isfile(path + &#39;/&#39; + f)):
+            filePath = path+&#39;/&#39;+f
+            f=open(filePath,&#39;r&#39;)
+            alllines=f.readlines()
+            f.close()
+            f=open(filePath,&#39;w+&#39;)
+            for eachline in alllines:
+                a=re.sub(str1,str2,eachline)
+                f.writelines(a)
+            print filePath+&quot;--&gt;&gt;&gt;&quot;+str1+&quot; replace &quot;+str2+&quot; success!&quot;
+            global totalFile
+            totalFile = totalFile + 1
+            f.close()
 
-$ sudo yum makecache fast
+if __name__ == &#39;__main__&#39;:
+    replace(&#39;E:/python/test&#39;,&quot;hi&quot;,input(&quot;input str(rember to add &#39;&#39; at the beginning and end):&quot;))
+    #输出执行文件的总数量
+    print &#39;totalFile =&#39;, totalFile
+</code></pre><h2 id="去除文件中的注释和空白行"><a href="#去除文件中的注释和空白行" class="headerlink" title="去除文件中的注释和空白行"></a>去除文件中的注释和空白行</h2><p>我们有一个需求，就是去掉某些文件中的注释或者是空白行</p>
+<p>可以根据需要结合上面的脚本实现对某个目录下的所有文件去除注释和空白行</p>
+<pre><code>#!/usr/bin/python
+# -*- coding:utf8 -*-
 
-$ sudo yum install docker-ce</code></pre><p>查询安装的dockers版本号</p>
-<pre><code>docker --version</code></pre><p>运行结果</p>
-<p><img src="/2020/07/13/fabric-da-jian-yi/docker-version.png" alt> </p>
-<p>此外还可以设置镜像加速、启动和停止等，此次不做说明</p>
-<h3 id="Docker-Compose"><a href="#Docker-Compose" class="headerlink" title="Docker-Compose"></a>Docker-Compose</h3><p>需要使用curl命令下载 docker-compose</p>
-<p>下载curl</p>
-<pre><code>yum install curl</code></pre><p>安装Compose</p>
-<p>参考链接：<a href="https://www.runoob.com/docker/docker-compose.html" target="_blank" rel="noopener">https://www.runoob.com/docker/docker-compose.html</a></p>
-<p>可以更换1.24.1来安装其他版本</p>
-<pre><code>$ sudo curl -L &quot;https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose</code></pre><p>查看安装好的版本</p>
-<pre><code>docker-compose --version</code></pre><p>运行结果</p>
-<p><img src="/2020/07/13/fabric-da-jian-yi/docker-compose-version.png" alt> </p>
-<p>关于docker常用命令和dockers-compass的用法可以查看上面的参考链接</p>
-<h3 id="Go语言安装"><a href="#Go语言安装" class="headerlink" title="Go语言安装"></a>Go语言安装</h3><p>可以去<a href="https://golang.org/" target="_blank" rel="noopener">go官网</a>查找linux版本的下载路径</p>
-<p>安装参考链接：<a href="https://www.runoob.com/go/go-environment.html" target="_blank" rel="noopener">https://www.runoob.com/go/go-environment.html</a></p>
-<pre><code>wget https://dl.google.com/go/go1.14.4.linux-amd64.tar.gz</code></pre><p>查看下好的压缩包大小</p>
-<pre><code>du -sh go1.14.4.linux-amd64.tar.gz</code></pre><p>运行截图</p>
-<p><img src="/2020/07/13/fabric-da-jian-yi/go-size.png" alt> </p>
-<p>解压命令</p>
-<pre><code>tar -C /usr/local -xzf go1.14.4.linux-amd64.tar.gz</code></pre><p>配置go环境变量</p>
-<pre><code># 打开配置文件
-vi /etc/profile
+import os
+import re
 
-# 文件末尾加上
-export PATH=$PATH:/usr/local/go/bin
-export GOPATH=/opt/gopath</code></pre><p>修改完成后 执行</p>
-<pre><code># 进入etc目录
-cd /etc
-#使环境变量生效
-source profile</code></pre><p>查看是否生效</p>
-<pre><code>echo $PATH</code></pre><p>运行结果</p>
-<p><img src="/2020/07/13/fabric-da-jian-yi/go-path.png" alt> </p>
-<p>查看安装的go版本</p>
-<pre><code>go version</code></pre><p>运行结果</p>
-<p><img src="/2020/07/13/fabric-da-jian-yi/go-version.png" alt> </p>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>至此farbic需要的基础环境都已搭好</p>
+def replace(path):
+    f=open(path,&#39;r&#39;)
+    alllines=f.readlines()
+    f.close()
+    f=open(path,&#39;w+&#39;)
+    for eachline in alllines:
+        #去除首尾空格
+        line = eachline.strip()
+        if not len(line) or line.startswith(&#39;#&#39;):
+            continue
+        else:
+            f.writelines(eachline)
+    f.close()
 
+replace(&#39;E:/python/test/core.yaml&#39;)
+</code></pre>
             </div>
             <hr/>
 
@@ -575,7 +615,7 @@ source profile</code></pre><p>查看是否生效</p>
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://liaoqing1999.github.io/2020/07/13/fabric-da-jian-yi/">http://liaoqing1999.github.io/2020/07/13/fabric-da-jian-yi/</a>
+                    <a href="http://liaoqing1999.github.io/2020/07/16/wen-jian-zi-fu-chuan-ti-huan/">http://liaoqing1999.github.io/2020/07/16/wen-jian-zi-fu-chuan-ti-huan/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -613,8 +653,8 @@ source profile</code></pre><p>查看是否生效</p>
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Fabric/">
-                                    <span class="chip bg-color">Fabric</span>
+                                <a href="/tags/%E8%84%9A%E6%9C%AC/">
+                                    <span class="chip bg-color">脚本</span>
                                 </a>
                             
                         </div>
@@ -782,47 +822,49 @@ source profile</code></pre><p>查看是否生效</p>
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/07/14/fabric-da-jian-er/">
+                <a href="/2020/07/16/wen-jian-zi-fu-chuan-ti-huan/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="fabric搭建（二）">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="文件字符串替换">
                         
-                        <span class="card-title">fabric搭建（二）</span>
+                        <span class="card-title">文件字符串替换</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            fabric搭建（二）前言上一节我们搭建了fabric所需要的基本环境 docker、docker-compose、go语言环境等，今天进行Fabric源码及镜像文件处理
-参考连接https://www.cnblogs.com/aberic
+                            文件字符串替换脚本前言由于在工作中会遇到一些文件的处理问题或者其他可以使用脚本完成的工作，这个系列将记录一些我用到过的脚本
+文件夹下所有文件替换某个字符串有个需求，我们需要替换某个目录下，所有文件下面的某个字符串，我们采用python来制作
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-14
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-16
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Fabric/" class="post-category">
-                                    Fabric
+                            <a href="/categories/%E8%84%9A%E6%9C%AC/" class="post-category">
+                                    脚本
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Fabric/">
-                        <span class="chip bg-color">Fabric</span>
+                    <a href="/tags/%E8%84%9A%E6%9C%AC/">
+                        <span class="chip bg-color">脚本</span>
                     </a>
                     
                 </div>
@@ -836,31 +878,33 @@ source profile</code></pre><p>查看是否生效</p>
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/07/04/idea-kuai-jie-jian/">
+                <a href="/2020/07/15/vue-chang-jian-wen-ti/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Idea快捷键">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="vue常见问题">
                         
-                        <span class="card-title">Idea快捷键</span>
+                        <span class="card-title">vue常见问题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Idea快捷键基础Ctrl+Shift + Enter，语句完成“！”，否定完成，输入表达式时按 “！”键Ctrl+E，最近的文件Ctrl+Shift+E，最近更改的文件Shift+Click，可以关闭文件Ctrl+[ OR ]，可以跑到大
+                            vue常见问题前言这个系列的博客将记录我在vue中遇到的一些问题和解决思路
+vue变量复制参考链接：https://blog.csdn.net/weixin_42693164/article/details/102546335
+我在使用vu
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-04
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-15
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Idea/" class="post-category">
-                                    Idea
+                            <a href="/categories/vue/" class="post-category">
+                                    vue
                                 </a>
                             
                             
@@ -870,8 +914,8 @@ source profile</code></pre><p>查看是否生效</p>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Idea/">
-                        <span class="chip bg-color">Idea</span>
+                    <a href="/tags/vue/">
+                        <span class="chip bg-color">vue</span>
                     </a>
                     
                 </div>

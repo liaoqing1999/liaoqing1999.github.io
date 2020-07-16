@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="标签, 个人博客">
+    <meta name="keywords" content="分类: 脚本, 个人博客">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>标签 | 个人博客</title>
+    <title>分类: 脚本 | 个人博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -351,100 +351,133 @@
 
     
 
-<div id="tags" class="container chip-container">
+<div id="category-cloud" class="container chip-container">
     <div class="card">
         <div class="card-content">
             <div class="tag-title center-align">
-                <i class="fas fa-tags"></i>&nbsp;&nbsp;文章标签
+                <i class="fas fa-bookmark"></i>&nbsp;&nbsp;文章分类
             </div>
             <div class="tag-chips">
                 
                 
-                <a href="/tags/eclipse/" title="eclipse: 1">
+                
+                <a href="/categories/eclipse/" title="eclipse: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="eclipse" style="background-color: #F9EBEA;">eclipse
+                            style="background-color: #F9EBEA;">eclipse
                         <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/tags/Idea/" title="Idea: 1">
+                <a href="/categories/Idea/" title="Idea: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="Idea" style="background-color: #F5EEF8;">Idea
+                            style="background-color: #F5EEF8;">Idea
                         <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/tags/Chrome/" title="Chrome: 1">
+                <a href="/categories/Chrome/" title="Chrome: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="Chrome" style="background-color: #D5F5E3;">Chrome
+                            style="background-color: #D5F5E3;">Chrome
                         <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/tags/Fabric/" title="Fabric: 2">
+                <a href="/categories/Fabric/" title="Fabric: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="Fabric" style="background-color: #E8F8F5;">Fabric
+                            style="background-color: #E8F8F5;">Fabric
                         <span class="tag-length">2</span>
                     </span>
                 </a>
                 
                 
-                <a href="/tags/vue/" title="vue: 1">
+                <a href="/categories/vue/" title="vue: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="vue" style="background-color: #FEF9E7;">vue
+                            style="background-color: #FEF9E7;">vue
                         <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/tags/%E8%84%9A%E6%9C%AC/" title="脚本: 1">
+                <a href="/categories/%E8%84%9A%E6%9C%AC/" title="脚本: 1">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="脚本" style="background-color: #F8F9F9;">脚本
+                             chip-active "
+                            style="background-color: #F8F9F9;">脚本
                         <span class="tag-length">1</span>
                     </span>
                 </a>
+                
                 
             </div>
         </div>
     </div>
 </div>
 
-    
-    <link rel="stylesheet" type="text/css" href="/libs/jqcloud/jqcloud.css">
-<style type="text/css">
-    #tag-wordcloud {
-        width: 100%;
-        height: 300px;
-    }
-</style>
-
-<div class="container" data-aos="fade-up">
-    <div class="card">
-        <div id="tag-wordcloud" class="card-content"></div>
-    </div>
-</div>
-
-<script type="text/javascript" src="/libs/jqcloud/jqcloud-1.0.4.min.js"></script>
-<script type="text/javascript">
-    
-
-    $('#tag-wordcloud').jQCloud([{"text":"eclipse","weight":1,"link":"/tags/eclipse/"},{"text":"Idea","weight":1,"link":"/tags/Idea/"},{"text":"Chrome","weight":1,"link":"/tags/Chrome/"},{"text":"Fabric","weight":2,"link":"/tags/Fabric/"},{"text":"vue","weight":1,"link":"/tags/vue/"},{"text":"脚本","weight":1,"link":"/tags/脚本/"}], {
-        autoResize: true
-    });
-</script>
 
     
 
+    <article id="articles" class="container articles">
+        <div class="row tags-posts">
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2020/07/16/wen-jian-zi-fu-chuan-ti-huan/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="文件字符串替换">
+                            
+                            <span class="card-title">文件字符串替换</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                文件字符串替换脚本前言由于在工作中会遇到一些文件的处理问题或者其他可以使用脚本完成的工作，这个系列将记录一些我用到过的脚本
+文件夹下所有文件替换某个字符串有个需求，我们需要替换某个目录下，所有文件下面的某个字符串，我们采用python来制作
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-16
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E8%84%9A%E6%9C%AC/" class="post-category">
+                                    脚本
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/%E8%84%9A%E6%9C%AC/">
+                            <span class="chip bg-color">脚本</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </article>
 </main>
+
+
 
 
     <footer class="page-footer bg-color">

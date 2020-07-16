@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>文件字符串替换</title>
+      <link href="/2020/07/16/wen-jian-zi-fu-chuan-ti-huan/"/>
+      <url>/2020/07/16/wen-jian-zi-fu-chuan-ti-huan/</url>
+      
+        <content type="html"><![CDATA[<h1 id="文件字符串替换脚本"><a href="#文件字符串替换脚本" class="headerlink" title="文件字符串替换脚本"></a>文件字符串替换脚本</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>由于在工作中会遇到一些文件的处理问题或者其他可以使用脚本完成的工作，这个系列将记录一些我用到过的脚本</p><h2 id="文件夹下所有文件替换某个字符串"><a href="#文件夹下所有文件替换某个字符串" class="headerlink" title="文件夹下所有文件替换某个字符串"></a>文件夹下所有文件替换某个字符串</h2><p>有个需求，我们需要替换某个目录下，所有文件下面的某个字符串，我们采用python来制作这个脚本</p><p>精简模式</p><p>这个脚本将该脚本目录下，所有文件中的“souceStr”替换成用户输入的destStr，可以自己根据需要手动更改相关地方</p><pre><code>#!/usr/bin/python# -*- coding:utf8 -*-import osimport redef replace(path, souceStr, destStr):    #读取目录下所有文件    files = os.listdir(path)    #遍历这些文件    for f in files:        #如果文件名等于该脚本的名字 不执行        if f == os.path.basename(__file__):            continue        #如果文件是一个目录 执行递归        elif os.path.isdir(path + &#39;/&#39; + f):            replace(path+ &#39;/&#39; + f, souceStr, destStr)        #否则 是一个文件        else:            filePath = path+&#39;/&#39;+f            f=open(filePath,&#39;r&#39;)            #读出该文件所有的行            alllines=f.readlines()            f.close()            f=open(filePath,&#39;w+&#39;)            #对所有的行进行循环            for eachline in alllines:                #替换字符串                a=re.sub(souceStr,destStr,eachline)                f.writelines(a)            f.close()replace(&#39;./&#39;, &quot;souceStr&quot;, input(&quot;please input destStr, rember to add &#39; at the beginning and end :&quot;))</code></pre><p>详细模式</p><p>这个脚本和上一个脚本是一样的，只是添加了一些输出和隐藏文件夹的判断，可以根据需要更改相应变量</p><pre><code>#!/usr/bin/python  # -*- coding:utf8 -*-  import os  import retotalFile = 0 print os.path.basename(__file__) def replace(path,str1,str2):    # 返回一个列表，其中包含在目录条目的名称(google翻译)      files = os.listdir(path)        for f in files:          if(os.path.isdir(path + &#39;/&#39; + f)):              # 排除隐藏文件夹。因为隐藏文件夹过多              if(f[0] == &#39;.&#39;):                  pass              else:                  # 进入下一层文件夹                  replace(path+ &#39;/&#39; + f,str1,str2)          if(os.path.isfile(path + &#39;/&#39; + f)):            filePath = path+&#39;/&#39;+f            f=open(filePath,&#39;r&#39;)            alllines=f.readlines()            f.close()            f=open(filePath,&#39;w+&#39;)            for eachline in alllines:                a=re.sub(str1,str2,eachline)                f.writelines(a)            print filePath+&quot;--&gt;&gt;&gt;&quot;+str1+&quot; replace &quot;+str2+&quot; success!&quot;            global totalFile            totalFile = totalFile + 1            f.close()if __name__ == &#39;__main__&#39;:    replace(&#39;E:/python/test&#39;,&quot;hi&quot;,input(&quot;input str(rember to add &#39;&#39; at the beginning and end):&quot;))    #输出执行文件的总数量    print &#39;totalFile =&#39;, totalFile</code></pre><h2 id="去除文件中的注释和空白行"><a href="#去除文件中的注释和空白行" class="headerlink" title="去除文件中的注释和空白行"></a>去除文件中的注释和空白行</h2><p>我们有一个需求，就是去掉某些文件中的注释或者是空白行</p><p>可以根据需要结合上面的脚本实现对某个目录下的所有文件去除注释和空白行</p><pre><code>#!/usr/bin/python# -*- coding:utf8 -*-import osimport redef replace(path):    f=open(path,&#39;r&#39;)    alllines=f.readlines()    f.close()    f=open(path,&#39;w+&#39;)    for eachline in alllines:        #去除首尾空格        line = eachline.strip()        if not len(line) or line.startswith(&#39;#&#39;):            continue        else:            f.writelines(eachline)    f.close()replace(&#39;E:/python/test/core.yaml&#39;)</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 脚本 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 脚本 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>vue常见问题</title>
       <link href="/2020/07/15/vue-chang-jian-wen-ti/"/>
       <url>/2020/07/15/vue-chang-jian-wen-ti/</url>
