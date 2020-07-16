@@ -3,7 +3,7 @@ layout: post
 title: vue常见问题
 date: 2020-07-15 16:00:26
 tags: vue
-categories: Idea
+categories: vue
 ---
 
 # vue常见问题
