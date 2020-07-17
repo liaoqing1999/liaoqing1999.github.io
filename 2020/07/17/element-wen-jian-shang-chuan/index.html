@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, 个人博客">
+    <meta name="keywords" content="element文件上传, 个人博客">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | 个人博客</title>
+    <title>element文件上传 | 个人博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -309,12 +309,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">element文件上传</h1>
                 </div>
             </div>
         </div>
@@ -429,12 +429,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/vue/">
+                                <span class="chip bg-color">vue</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/vue/" class="post-category">
+                                vue
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -443,28 +456,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-06-16
+                    2020-07-17
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-06-16
+                    2020-07-17
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    73
+                    1.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    5 分
                 </div>
                 
 
@@ -479,16 +492,165 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server</code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate</code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy</code></pre>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+                <h1 id="element文件上传"><a href="#element文件上传" class="headerlink" title="element文件上传"></a>element文件上传</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>今天进行了element 文件上传组件的运用，写一下心得</p>
+<h2 id="前端组件配置"><a href="#前端组件配置" class="headerlink" title="前端组件配置"></a>前端组件配置</h2><p>具体组件配置官方文档里面有，我就不一一说明了</p>
+<pre><code>//自定义上传
+&lt;el-upload id=&quot;el-upload&quot; 
+    ref=&quot;uploadForm&quot; 
+    :auto-upload=&quot;false&quot; 
+    :http-request=&quot;upLoad&quot; 
+    :on-remove=&quot;onRemove&quot; 
+    :before-upload=&quot;beforeUpload&quot;
+    &gt; 
+     &lt;el-button slot=&quot;trigger&quot; size=&quot;small&quot; type=&quot;primary&quot;&gt;
+      点击上传
+     &lt;/el-button&gt; 
+    &lt;/template&gt; 
+   &lt;/el-upload&gt; </code></pre><p>这里主要说明两种情况：</p>
+<p>第一种直接用action配置上传地址，这种的优点就是方便、省心，element会直接把文件调用后端接口，但是不够灵活，无法传递额外的参数，也只能一个个文件上传。</p>
+<p>第二种用http-request覆盖掉默认的上传方式，可以在这里调用后端地址，配置相关请求头，增加参数等等，这里可以设置取消自动上传，然后通过按钮触发组件的上传方法，但是这种方法其实也是一个个发请求的。</p>
+<p>而且我的需求是需要在点击提交的时候根据输入的编码传给后端，然后生成文件夹的名字，所有还需要进行一些改造。</p>
+<pre><code>//我的上传方法并没有写任何东西，因为我的上传是通过点击提交的时候再自定义上传的
+//之所以要写一个空方法是因为需要获取到组件的file数组
+//如果不写这个方法  会取action里面的值来进行上传（就算action为空也会）
+upLoad(params){
 
+},</code></pre><pre><code>//fileList是我定义的用于存储file数组的变量
+//在上传前，将文件存储到fileList里面
+beforeUpload(file){
+    this.fileList.push(file)
+},
+//移除方法，将fileList里面的file去掉
+onRemove(file){
+    let index = this.fileList.findIndex(fileItem =&gt; fileItem.uid === file.uid);
+    this.fileList.splice(index, 1);
+}</code></pre><pre><code>//点击提交的时候触发的方法
+//第一句话是触发上传组件的上传方法 这样才能触发beforeUpload（因为我们写了取消自动上传）
+this.$refs.uploadForm.submit()
+//对fileList用formData拼接
+let formData = new FormData();
+this.fileList.forEach((item)=&gt;{
+    formData.append(&quot;file&quot;,item);
+})
+//这里设置下请求头和传递的额外参数
+$http.post(&quot;bmp/v1/chaincode/uploadEnclosure/&quot;+this.data.code, formData,{headers: {&#39;Content-Type&#39;: &#39;multipart/form-data&#39;}}).then(data =&gt; {
+    console.log(data)
+}).catch(error =&gt; {
+        this.$message({
+        message: &quot;error&quot;,
+        type: &#39;error&#39;
+        })
+    })</code></pre><p>现在前端基本配置好了，调用接口就可以实现文件上传了</p>
+<h2 id="后端接口"><a href="#后端接口" class="headerlink" title="后端接口"></a>后端接口</h2><p>controller</p>
+<pre><code>    @POST
+    @Path(&quot;/chaincode/uploadEnclosure/{code}&quot;)
+    @Consumes(MediaType.MULTIPART_FORM_DATA)
+    @ApiOperation(&quot;文件上传&quot;)
+    public List&lt;Map&lt;String, Object&gt;&gt; uploadEnclosure(@Context HttpServletRequest request,@PathParam(value = &quot;code&quot;) String code) {
+        StandardMultipartHttpServletRequest standardRequest = new StandardMultipartHttpServletRequest(request);
+        MultiValueMap&lt;String, MultipartFile&gt; multiFileMap = standardRequest.getMultiFileMap();
+        List&lt;MultipartFile&gt; fileList = null;
+        for (String key : multiFileMap.keySet()) {
+            fileList = multiFileMap.get(key);
+        }
+        if(null == fileList || fileList.size()==0) {
+            throw new Exception(&quot;文件为空&quot;);
+        }
+        List&lt;Map&lt;String, Object&gt;&gt; result = new ArrayList&lt;Map&lt;String, Object&gt;&gt;();
+        String realPath = request.getServletContext().getRealPath(&quot;/&quot;);
+        String baseUrl = realPath+code + File.separator;
+        for(MultipartFile file : fileList) {
+            Map&lt;String, Object&gt; uploadFile = fileService.uploadFile(file,baseUrl,  file.getOriginalFilename());
+            result.add(uploadFile);
+        }
+
+        return result;    
+    }</code></pre><pre><code>//另外种方式
+ /**
+     * 实现多文件上传
+     **/
+    @RequestMapping(value = &quot;/multifile&quot;, method = RequestMethod.POST)
+    @ResponseBody
+    public ResultUtil multifileUpload(
+            @RequestParam(&quot;fileName&quot;) List&lt;MultipartFile&gt; files) {
+        if (files.isEmpty()) {
+            return ResultUtil.failed(&quot;文件为空&quot;);
+        }
+        for (MultipartFile file : files) {
+            String fileName = file.getOriginalFilename();
+            int size = (int) file.getSize();
+            logger.info(fileName + &quot;--&gt;&quot; + size);
+
+            if (file.isEmpty()) {
+                return ResultUtil.failed(&quot;文件为空&quot;);
+            } else {
+                File dest = new File(path + &quot;/&quot; + fileName);
+                if (!dest.getParentFile().exists()) {
+                    dest.getParentFile().mkdir();
+                }
+                try {
+                    file.transferTo(dest);
+                } catch (Exception e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                    return ResultUtil.failed();
+                }
+            }
+        }
+        return ResultUtil.success(null);
+    }
+</code></pre><p>service</p>
+<pre><code>public Map&lt;String, Object&gt; uploadFile(MultipartFile file,String baseUrl,String fileName) {
+        if (file.isEmpty()) {
+            throw new Exception(&quot;文件为空&quot;);
+        }
+        File dest = new File(baseUrl+fileName);
+        if (!dest.getParentFile().exists()) {
+            dest.getParentFile().mkdirs();
+        }
+        try {
+            file.transferTo(dest);
+            Map&lt;String,Object&gt; result =new HashMap&lt;String,Object&gt;();
+            result.put(&quot;name&quot;, fileName);
+            String hash = getFileSHA1(dest);
+            result.put(&quot;hash&quot;, hash);
+            return result;
+        } catch (IllegalStateException e) {
+            e.printStackTrace();
+            throw new Exception(&quot;文件为空&quot;);
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new Exception(&quot;文件为空&quot;);
+        } 
+    }</code></pre><h2 id="sha256获取文件hash"><a href="#sha256获取文件hash" class="headerlink" title="sha256获取文件hash"></a>sha256获取文件hash</h2><p>这些方法也是写在service里面的</p>
+<pre><code>private static String getFileSHA1(File file) {
+        String str = &quot;&quot;;
+        try {
+            str = getHash(file, &quot;SHA-256&quot;);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+
+    private static String getHash(File file, String hashType) throws Exception {
+        InputStream fis = new FileInputStream(file);
+        byte buffer[] = new byte[1024];
+        MessageDigest md5 = MessageDigest.getInstance(hashType);
+        for (int numRead = 0; (numRead = fis.read(buffer)) &gt; 0; ) {
+            md5.update(buffer, 0, numRead);
+        }
+        fis.close();
+        return toHexString(md5.digest());
+    }
+
+     private static String toHexString(byte b[]) {
+        StringBuilder sb = new StringBuilder();
+        for (byte aB : b) {
+            sb.append(Integer.toHexString(aB &amp; 0xFF));
+        }
+        return sb.toString();
+     }</code></pre>
             </div>
             <hr/>
 
@@ -513,7 +675,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://liaoqing1999.github.io/2020/06/16/hello-world/">http://liaoqing1999.github.io/2020/06/16/hello-world/</a>
+                    <a href="http://liaoqing1999.github.io/2020/07/17/element-wen-jian-shang-chuan/">http://liaoqing1999.github.io/2020/07/17/element-wen-jian-shang-chuan/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -550,7 +712,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/vue/">
+                                    <span class="chip bg-color">vue</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -716,46 +882,52 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/07/04/eclipse-chang-yong-kuai-jie-jian/">
+                <a href="/2020/07/17/element-wen-jian-shang-chuan/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="eclipse常用快捷键">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="element文件上传">
                         
-                        <span class="card-title">eclipse常用快捷键</span>
+                        <span class="card-title">element文件上传</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            eclipse常用快捷键编辑Ctrl+1    快速修复（最经典的快捷键,就不用多说了，可以解决很多问题，比如import类、try catch包围等）Ctrl+Shift+F    格式化当前代码Ctrl+Shift+M    添加类的i
+                            element文件上传前言今天进行了element 文件上传组件的运用，写一下心得
+前端组件配置具体组件配置官方文档里面有，我就不一一说明了
+//自定义上传
+&lt;el-upload id=&quot;el-upload&quot; 
+ 
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-04
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-17
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/eclipse/" class="post-category">
-                                    eclipse
+                            <a href="/categories/vue/" class="post-category">
+                                    vue
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/eclipse/">
-                        <span class="chip bg-color">eclipse</span>
+                    <a href="/tags/vue/">
+                        <span class="chip bg-color">vue</span>
                     </a>
                     
                 </div>
@@ -766,37 +938,49 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/06/16/hello-world/">
+                <a href="/2020/07/16/wen-jian-zi-fu-chuan-ti-huan/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="文件字符串替换">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">文件字符串替换</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                            文件字符串替换脚本前言由于在工作中会遇到一些文件的处理问题或者其他可以使用脚本完成的工作，这个系列将记录一些我用到过的脚本
+文件夹下所有文件替换某个字符串有个需求，我们需要替换某个目录下，所有文件下面的某个字符串，我们采用python来制作
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-16
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-16
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Liao Qing
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%84%9A%E6%9C%AC/" class="post-category">
+                                    脚本
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%84%9A%E6%9C%AC/">
+                        <span class="chip bg-color">脚本</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
