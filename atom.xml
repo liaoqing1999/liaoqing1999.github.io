@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://liaoqing1999.github.io/"/>
-  <updated>2020-09-29T05:47:20.203Z</updated>
+  <updated>2020-09-29T06:48:16.306Z</updated>
   <id>http://liaoqing1999.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>定时任务quartz 管理和日志</title>
+    <link href="http://liaoqing1999.github.io/2020/09/29/ding-shi-ren-wu-quartz-guan-li-he-ri-zhi/"/>
+    <id>http://liaoqing1999.github.io/2020/09/29/ding-shi-ren-wu-quartz-guan-li-he-ri-zhi/</id>
+    <published>2020-09-29T06:06:44.000Z</published>
+    <updated>2020-09-29T06:48:16.306Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;定时任务quartz-管理和日志&quot;&gt;&lt;a href=&quot;#定时任务quartz-管理和日志&quot; class=&quot;headerlink&quot; title=&quot;定时任务quartz 管理和日志&quot;&gt;&lt;/a&gt;定时任务quartz 管理和日志&lt;/h1&gt;&lt;h2 id=&quot;前言&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Quartz" scheme="http://liaoqing1999.github.io/categories/Quartz/"/>
+    
+    
+      <category term="Quartz" scheme="http://liaoqing1999.github.io/tags/Quartz/"/>
+    
+  </entry>
   
   <entry>
     <title>定时任务quartz</title>
