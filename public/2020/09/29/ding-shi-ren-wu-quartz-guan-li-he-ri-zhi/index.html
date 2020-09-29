@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, 个人博客">
+    <meta name="keywords" content="定时任务quartz 管理和日志, 个人博客">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | 个人博客</title>
+    <title>定时任务quartz 管理和日志 | 个人博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -309,12 +309,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">定时任务quartz 管理和日志</h1>
                 </div>
             </div>
         </div>
@@ -429,12 +429,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Quartz/">
+                                <span class="chip bg-color">Quartz</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Quartz/" class="post-category">
+                                Quartz
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -443,28 +456,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-06-16
+                    2020-09-29
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-06-16
+                    2020-09-29
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    73
+                    2.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    12 分
                 </div>
                 
 
@@ -479,16 +492,509 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server</code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate</code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy</code></pre>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+                <h1 id="定时任务quartz-管理和日志"><a href="#定时任务quartz-管理和日志" class="headerlink" title="定时任务quartz 管理和日志"></a>定时任务quartz 管理和日志</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>上一篇介绍了quartz的结构和基础用法，现在则是利用反射来实现定时任务的抽取，实现动态配置定时任务和相关日志管理</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>两个实体任务表和任务日志表。</p>
+<p>任务表存放：id、任务名、任务组名、调用类名方法名、调用目标参数、cron表达式、错误策略等</p>
+<pre><code>CREATE TABLE `td_sm_task` (
+  `task_id` varchar(64) NOT NULL COMMENT &#39;任务ID&#39;,
+  `task_name` varchar(64) NOT NULL DEFAULT &#39;&#39; COMMENT &#39;任务名称&#39;,
+  `task_group` varchar(64) DEFAULT &#39;DEFAULT&#39; COMMENT &#39;任务组名&#39;,
+  `invoke_target` varchar(500) NOT NULL COMMENT &#39;注解value&#39;,
+  `invoke_param` varchar(500) DEFAULT NULL COMMENT &#39;调用目标参数&#39;,
+  `cron_expression` varchar(255) DEFAULT &#39;&#39; COMMENT &#39;cron执行表达式&#39;,
+  `misfire_policy` varchar(20) DEFAULT &#39;3&#39; COMMENT &#39;计划执行错误策略（1立即执行 2执行一次 3放弃执行）&#39;,
+  `concurrent` char(1) DEFAULT &#39;1&#39; COMMENT &#39;是否并发执行（0允许 1禁止）&#39;,
+  `status` char(1) DEFAULT &#39;0&#39; COMMENT &#39;状态（0正常 1暂停）&#39;,
+  `create_by` varchar(64) DEFAULT &#39;&#39; COMMENT &#39;创建者&#39;,
+  `create_time` datetime DEFAULT NULL COMMENT &#39;创建时间&#39;,
+  `update_by` varchar(64) DEFAULT &#39;&#39; COMMENT &#39;更新者&#39;,
+  `update_time` datetime DEFAULT NULL COMMENT &#39;更新时间&#39;,
+  `remark` varchar(500) DEFAULT &#39;&#39; COMMENT &#39;备注信息&#39;,
+  PRIMARY KEY (`task_id`,`task_name`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT=&#39;定时任务调度表&#39;;</code></pre><p>日志表存放：任务名、运行时间、运行结果等</p>
+<pre><code>CREATE TABLE `td_sm_task_log` (
+  `task_log_id` varchar(64) NOT NULL COMMENT &#39;任务日志ID&#39;,
+  `task_name` varchar(64) NOT NULL COMMENT &#39;任务名称&#39;,
+  `task_group` varchar(64) DEFAULT NULL COMMENT &#39;任务组名&#39;,
+  `invoke_target` varchar(500) NOT NULL COMMENT &#39;调用目标字符串&#39;,
+  `invoke_param` varchar(500) DEFAULT NULL COMMENT &#39;调用目标参数&#39;,
+  `task_message` varchar(2500) DEFAULT NULL COMMENT &#39;日志信息&#39;,
+  `status` char(1) DEFAULT &#39;0&#39; COMMENT &#39;执行状态（0正常 1失败）&#39;,
+  `exception_info` varchar(2000) DEFAULT &#39;&#39; COMMENT &#39;异常信息&#39;,
+  `start_time` datetime DEFAULT NULL COMMENT &#39;创建时间&#39;,
+  `stop_time` datetime DEFAULT NULL COMMENT &#39;停止时间&#39;,
+  PRIMARY KEY (`task_log_id`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT=&#39;定时任务调度日志表&#39;;</code></pre><p>实现思路</p>
+<p>根据任务表里面的实体建立对应策略的任务实例，实例方法中，根据调用方法和参数反射调用对应方法，每次调用保存日志。</p>
+<p>应用启动时，查找所有任务表，并开启所有运行中的任务</p>
+<h2 id="Job类"><a href="#Job类" class="headerlink" title="Job类"></a>Job类</h2><p>三个类 一个基础类 负责实现job接口和每次调用时新增日志</p>
+<p>两个继承类 主要是区分并发和非并发</p>
+<pre><code>//基础类
+public abstract class AbstractQuartzTask implements Job
+{
+    private static final Logger log = LoggerFactory.getLogger(AbstractQuartzTask.class);
 
+    /**
+     * 线程本地变量
+     */
+    private static ThreadLocal&lt;Date&gt; threadLocal = new ThreadLocal&lt;&gt;();
+
+    @Override
+    public void execute(JobExecutionContext context) throws JobExecutionException
+    {
+        TaskDTO sysTask = new TaskDTO();
+        BeanCopierUtil.copy(context.getMergedJobDataMap().get(ScheduleConstants.TASK_PROPERTIES), sysTask);
+        try
+        {
+            before(context, sysTask);
+            if (sysTask != null)
+            {
+                doExecute(context, sysTask);
+            }
+            after(context, sysTask, null);
+        }
+        catch (Exception e)
+        {
+            log.error(&quot;任务执行异常  - ：&quot;, e);
+            after(context, sysTask, e);
+        }
+    }
+
+    /**
+     * 执行前
+     *
+     * @param context 工作执行上下文对象
+     * @param sysTask 系统计划任务
+     */
+    protected void before(JobExecutionContext context, TaskDTO sysTask)
+    {
+        threadLocal.set(new Date());
+    }
+
+    /**
+     * 执行后
+     *
+     * @param context 工作执行上下文对象
+     * @param sysTask 系统计划任务
+     */
+    protected void after(JobExecutionContext context, TaskDTO sysTask, Exception e)
+    {
+        Date startTime = threadLocal.get();
+        threadLocal.remove();
+
+        final TaskLogDTO sysTaskLog = new TaskLogDTO();
+        sysTaskLog.setTaskName(sysTask.getTaskName());
+        sysTaskLog.setTaskGroup(sysTask.getTaskGroup());
+        sysTaskLog.setInvokeTarget(sysTask.getInvokeTarget());
+        sysTaskLog.setStartTime(startTime);
+        sysTaskLog.setStopTime(new Date());
+        long runMs = sysTaskLog.getStopTime().getTime() - sysTaskLog.getStartTime().getTime();
+
+        String stautsMsg = &quot;&quot;;
+        String errorMsg = &quot;&quot;;
+        if (e != null)
+        {
+            sysTaskLog.setStatus(Constants.FAIL);
+            errorMsg = StringUtils.substring(ExceptionUtil.getExceptionMessage(e), 0, 2000);
+            stautsMsg = &quot;执行失败！&quot;;
+        }
+        else
+        {
+            sysTaskLog.setStatus(Constants.SUCCESS);
+            stautsMsg = &quot;执行成功！&quot;;
+        }
+        sysTaskLog.setTaskMessage(stautsMsg+&quot; 总共耗时：&quot; + runMs + &quot;毫秒&quot;+errorMsg);
+        // 写入数据库当中
+        SpringUtils.getBean(TaskLogService.class).addTaskLog(sysTaskLog);
+    }
+
+    /**
+     * 执行方法，由子类重载
+     *
+     * @param context 工作执行上下文对象
+     * @param sysTask 系统计划任务
+     * @throws Exception 执行过程中的异常
+     */
+    protected abstract void doExecute(JobExecutionContext context, TaskDTO sysTask) throws Exception;
+}
+
+//非并发
+public class QuartzTaskExecution extends AbstractQuartzTask
+{
+    @Override
+    protected void doExecute(JobExecutionContext context, TaskDTO sysJob) throws Exception
+    {
+        TaskInvokeUtil.invokeMethod(sysJob);
+    }
+}
+
+//并发子类
+@DisallowConcurrentExecution
+public class QuartzDisallowConcurrentExecution extends AbstractQuartzTask
+{
+    @Override
+    protected void doExecute(JobExecutionContext context, TaskDTO sysJob) throws Exception
+    {
+        TaskInvokeUtil.invokeMethod(sysJob);
+    }
+}
+</code></pre><h2 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h2><p>有两种方式，一种是通过bean名+方法名确认，一种是通过注解，我使用的是通过注解</p>
+<p>通过注解  在应用启动 的时候扫描所有bean并查找其中添加了注解的方法，存储到静态变量里面。</p>
+<pre><code>// 在bean创建完成后 查找使用了C2SysTask注解的方法
+@Service
+public class TaskBeanPostProcessor implements BeanPostProcessor {
+    @Override
+    public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
+        Class&lt;? extends Object&gt; cla = bean.getClass();
+        // 代理类的名字
+        String agentName = cla.getName();
+        // 原始类名字
+        String originalName = cla.getName();
+        // 如果被代理（事务管理、切面等） 找到原始类
+        if (originalName.contains(Constants.SPRING_AGENT_NAME) || originalName.contains(Constants.SPRING_AGENT_SYMBOL)) {
+            originalName = originalName.substring(0, originalName.indexOf(&quot;$$&quot;));
+            try {
+                cla = Class.forName(originalName);
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        Method[] methods = cla.getMethods();
+        // 循环方法 查找添加C2SysTask注解的方法
+        for (Method m : methods) {
+            if (m.isAnnotationPresent(C2SysTask.class)) {
+
+                C2SysTask annotation = m.getAnnotation(C2SysTask.class);
+                TaskAnnotationBean beanC2SysTask = TaskInvokeUtil.getBeanFromC2SysTask(annotation.value());
+                // 如果C2SysTask注解value值存在相同的值
+                if (beanC2SysTask != null) {
+                    String msg = &quot;C2SysTask注解检测到了相同的value！-&gt;&gt;&quot; + annotation.value() + &quot;\n&quot;;
+                    msg += &quot;\t&quot; + beanC2SysTask.getOriginalName() + &quot;中的方法&quot; + beanC2SysTask.getMethodName();
+                    msg += &quot;和&quot; + originalName + &quot;中的方法&quot; + m.getName() + &quot;在注解C2SysTask中的value冲突！&quot;;
+                    try {
+                        throw new TaskAnnotationException(msg);
+                    } catch (TaskAnnotationException e) {
+                        e.printStackTrace();
+                        System.exit(0);
+                    }
+                }
+                TaskAnnotationBean taskAnnotationBean = new TaskAnnotationBean();
+                taskAnnotationBean.setValue(annotation.value());
+                taskAnnotationBean.setBeanName(beanName);
+                taskAnnotationBean.setAgentName(agentName);
+                taskAnnotationBean.setOriginalName(originalName);
+                taskAnnotationBean.setMethodName(m.getName());
+                Parameter[] parameters = m.getParameters();
+                List&lt;C2SysTaskParameter&gt; parametersList = new ArrayList&lt;C2SysTaskParameter&gt;();
+                // 循环拿出参数
+                for (Parameter p : parameters) {
+                    C2SysTaskParameter c2Parameter = new C2SysTaskParameter();
+                    c2Parameter.setName(p.getName());
+                    c2Parameter.setType(p.getType());
+                    c2Parameter.setParameterizedType(p.getParameterizedType());
+                    parametersList.add(c2Parameter);
+                }
+                taskAnnotationBean.setParametersList(parametersList);
+                Constants.C2_SYS_TASK_ANNOTATION_BEANLIST.add(taskAnnotationBean);
+            }
+        }
+        return bean;
+    }
+
+}</code></pre><p>反射执行工具类</p>
+<pre><code>public class TaskInvokeUtil {
+    /**
+     * 执行方法
+     *
+     * @param sysTask
+     *            系统任务
+     */
+    public static void invokeMethod(TaskDTO sysTask) throws Exception {
+        String invokeTarget = sysTask.getInvokeTarget();
+        String paramStr = sysTask.getInvokeParam();
+        TaskAnnotationBean task = getBeanFromC2SysTask(invokeTarget);
+        if (task != null) {
+            String beanName = task.getBeanName();
+            String methodName = task.getMethodName();
+            Object bean = null;
+            List&lt;Object[]&gt; methodParams = getMethodParams(paramStr, task.getParametersList());
+            if (!isValidClassName(beanName)) {
+                bean = SpringUtils.getBean(beanName);
+            } else {
+                bean = Class.forName(beanName).newInstance();
+            }
+            invokeMethod(bean, methodName, methodParams);
+        }
+
+    }
+
+    /**
+     * 调用任务方法
+     *
+     * @param bean
+     *            目标对象
+     * @param methodName
+     *            方法名称
+     * @param methodParams
+     *            方法参数
+     */
+    private static void invokeMethod(Object bean, String methodName, List&lt;Object[]&gt; methodParams)
+            throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException,
+            InvocationTargetException {
+        if (StringUtils.isNotNull(methodParams) &amp;&amp; methodParams.size() &gt; 0) {
+            Method method = bean.getClass().getDeclaredMethod(methodName, getMethodParamsType(methodParams));
+            method.invoke(bean, getMethodParamsValue(methodParams));
+        } else {
+            Method method = bean.getClass().getDeclaredMethod(methodName);
+            method.invoke(bean);
+        }
+    }
+
+    /**
+     * 校验是否为为class包名
+     * 
+     * @param str
+     *            名称
+     * @return true是 false否
+     */
+    public static boolean isValidClassName(String invokeTarget) {
+        return StringUtils.countMatches(invokeTarget, &quot;.&quot;) &gt; 1;
+    }
+
+    /**
+     * 获取method方法参数相关列表
+     * 
+     * @param invokeTarget
+     *            目标字符串
+     * @param list
+     * @return method方法相关参数列表
+     */
+    public static List&lt;Object[]&gt; getMethodParams(String invokeTarget, List&lt;C2SysTaskParameter&gt; list) {
+
+        List&lt;Object[]&gt; classs = new LinkedList&lt;&gt;();
+        if(StringUtils.isEmpty(invokeTarget)) {
+            return classs;
+        }
+        String[] methodParams = invokeTarget.split(&quot;,&quot;);
+        for (int i = 0; i &lt; list.size(); i++) {
+            C2SysTaskParameter parameter = list.get(i);
+            Class&lt;?&gt; type = parameter.getType();
+            String par = methodParams[i];
+            Object cast =null;
+            if(type == Integer.class || type == Integer.TYPE) {
+                cast = Integer.valueOf(par);
+            }else if(type == Double.class || type == Double.TYPE) {
+                cast = Double.valueOf(par);
+            }else if(type == Float.class || type == Float.TYPE) {
+                cast = Float.valueOf(par);
+            }else if(type == Boolean.class || type == Boolean.TYPE) {
+                cast = Boolean.valueOf(par);
+            }else if(type == Byte.class || type == Byte.TYPE) {
+                cast = Byte.valueOf(par);
+            }else if(type == Short.class || type == Short.TYPE) {
+                cast = Short.valueOf(par);
+            }else if(type == Long.class || type == Long.TYPE) {
+                cast = Long.valueOf(par);
+            }else if(type == Character.class || type == Character.TYPE) {
+                cast = par.charAt(0);
+            }else if(type == String.class) {
+                cast = par;
+            }else {
+                cast = type.cast(par);
+            }
+            classs.add(new Object[] {cast,type});
+        }
+        return classs;
+    }
+
+    /**
+     * 获取参数类型
+     * 
+     * @param methodParams
+     *            参数相关列表
+     * @return 参数类型列表
+     */
+    public static Class&lt;?&gt;[] getMethodParamsType(List&lt;Object[]&gt; methodParams) {
+        Class&lt;?&gt;[] classs = new Class&lt;?&gt;[methodParams.size()];
+        int index = 0;
+        for (Object[] os : methodParams) {
+            classs[index] = (Class&lt;?&gt;) os[1];
+            index++;
+        }
+        return classs;
+    }
+
+    /**
+     * 获取参数值
+     * 
+     * @param methodParams
+     *            参数相关列表
+     * @return 参数值列表
+     */
+    public static Object[] getMethodParamsValue(List&lt;Object[]&gt; methodParams) {
+        Object[] classs = new Object[methodParams.size()];
+        int index = 0;
+        for (Object[] os : methodParams) {
+            classs[index] = (Object) os[0];
+            index++;
+        }
+        return classs;
+    }
+
+    /**
+     * 从C2_SYS_TASK_ANNOTATION_BEANLIST查找是否有相同的value
+     * 
+     * @param key
+     * @param value
+     * @return
+     */
+    public static TaskAnnotationBean getBeanFromC2SysTask(String value) {
+        for (TaskAnnotationBean m : Constants.C2_SYS_TASK_ANNOTATION_BEANLIST) {
+            if (value.equals(m.getValue())) {
+                return m;
+            }
+        }
+        return null;
+    }
+}
+</code></pre><h2 id="启动任务"><a href="#启动任务" class="headerlink" title="启动任务"></a>启动任务</h2><p>工具任务实体 创建对应任务实体，并设置相关策略</p>
+<pre><code>public class ScheduleUtils
+{
+    /**
+     * 得到quartz任务类
+     *
+     * @param sysTask 执行计划
+     * @return 具体执行任务类
+     */
+    private static Class&lt;? extends Job&gt; getQuartzTaskClass(TaskDTO sysTask)
+    {
+        boolean isConcurrent = &quot;0&quot;.equals(sysTask.getConcurrent());
+        return isConcurrent ? QuartzTaskExecution.class : QuartzDisallowConcurrentExecution.class;
+    }
+
+    /**
+     * 构建任务触发对象
+     */
+    public static TriggerKey getTriggerKey(String jobId, String jobGroup)
+    {
+        return TriggerKey.triggerKey(ScheduleConstants.TASK_CLASS_NAME + jobId, jobGroup);
+    }
+
+    /**
+     * 构建任务键对象
+     */
+    public static JobKey getTaskKey(String jobId, String jobGroup)
+    {
+        return JobKey.jobKey(ScheduleConstants.TASK_CLASS_NAME + jobId, jobGroup);
+    }
+
+    /**
+     * 创建定时任务
+     */
+    public static void createScheduleTask(Scheduler scheduler, TaskDTO job) throws SchedulerException, TaskException
+    {
+        Class&lt;? extends Job&gt; jobClass = getQuartzTaskClass(job);
+        // 构建job信息
+        String jobId = job.getTaskId();
+        String jobGroup = job.getTaskGroup();
+        JobDetail jobDetail = JobBuilder.newJob(jobClass).withIdentity(getTaskKey(jobId, jobGroup)).build();
+
+        // 表达式调度构建器
+        CronScheduleBuilder cronScheduleBuilder = CronScheduleBuilder.cronSchedule(job.getCronExpression());
+        cronScheduleBuilder = handleCronScheduleMisfirePolicy(job, cronScheduleBuilder);
+
+        // 按新的cronExpression表达式构建一个新的trigger
+        CronTrigger trigger = TriggerBuilder.newTrigger().withIdentity(getTriggerKey(jobId, jobGroup))
+                .withSchedule(cronScheduleBuilder).build();
+
+        // 放入参数，运行时的方法可以获取
+        jobDetail.getJobDataMap().put(ScheduleConstants.TASK_PROPERTIES, job);
+
+        // 判断是否存在
+        if (scheduler.checkExists(getTaskKey(jobId, jobGroup)))
+        {
+            // 防止创建时存在数据问题 先移除，然后在执行创建操作
+            scheduler.deleteJob(getTaskKey(jobId, jobGroup));
+        }
+
+        scheduler.scheduleJob(jobDetail, trigger);
+
+        // 暂停任务
+        if (job.getStatus().equals(ScheduleConstants.Status.PAUSE.getValue()))
+        {
+            scheduler.pauseJob(ScheduleUtils.getTaskKey(jobId, jobGroup));
+        }
+    }
+
+    /**
+     * 设置定时任务策略
+     */
+    public static CronScheduleBuilder handleCronScheduleMisfirePolicy(TaskDTO job, CronScheduleBuilder cb)
+            throws TaskException
+    {
+        switch (job.getMisfirePolicy())
+        {
+            case ScheduleConstants.MISFIRE_DEFAULT:
+                return cb;
+            case ScheduleConstants.MISFIRE_IGNORE_MISFIRES:
+                return cb.withMisfireHandlingInstructionIgnoreMisfires();
+            case ScheduleConstants.MISFIRE_FIRE_AND_PROCEED:
+                return cb.withMisfireHandlingInstructionFireAndProceed();
+            case ScheduleConstants.MISFIRE_DO_NOTHING:
+                return cb.withMisfireHandlingInstructionDoNothing();
+            default:
+                throw new TaskException(&quot;The task misfire policy &#39;&quot; + job.getMisfirePolicy()
+                        + &quot;&#39; cannot be used in cron schedule tasks&quot;, Code.CONFIG_ERROR);
+        }
+    }
+}
+</code></pre><h2 id="service启动任务"><a href="#service启动任务" class="headerlink" title="service启动任务"></a>service启动任务</h2><p>应用启动时 初始化所有待运行任务</p>
+<pre><code>@Service
+public class TaskServiceImpl implements TaskService {
+    @Autowired
+    private Scheduler scheduler;
+
+    @Autowired
+    private TaskDao taskDao;
+
+    /**
+     * 项目启动时，初始化定时器 主要是防止手动修改数据库导致未同步到定时任务处理（注：不能手动修改数据库ID和任务组名，否则会导致脏数据）
+     */
+    @PostConstruct
+    public void init() throws SchedulerException, TaskException {
+        scheduler.clear();
+        //scheduler = StdSchedulerFactory.getDefaultScheduler();
+        List&lt;TaskEO&gt; taskList = taskDao.selectTaskAll();
+        for (TaskEO task : taskList) {
+            TaskDTO taskDTO = new TaskDTO();
+            if (null != task) {
+                BeanCopierUtil.copy(task, taskDTO);
+            }
+            if(ScheduleConstants.Status.NORMAL.getValue().equals(taskDTO.getStatus())) {
+                ScheduleUtils.createScheduleTask(scheduler, taskDTO);
+            }
+        }
+    }
+
+
+    /**
+     * 立即运行任务
+     * 
+     * @param task
+     *            调度信息
+     */
+    @Override
+    @Transactional
+    public void run(TaskDTO task) throws SchedulerException {
+        String taskId = task.getTaskId();
+        String taskGroup = task.getTaskGroup();
+        TaskDTO properties = selectTaskById(task.getTaskId());
+        // 参数
+        JobDataMap dataMap = new JobDataMap();
+        dataMap.put(ScheduleConstants.TASK_PROPERTIES, properties);
+        scheduler.triggerJob(ScheduleUtils.getTaskKey(taskId, taskGroup), dataMap);
+    }
+}</code></pre>
             </div>
             <hr/>
 
@@ -513,7 +1019,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://liaoqing1999.github.io/2020/06/16/hello-world/">http://liaoqing1999.github.io/2020/06/16/hello-world/</a>
+                    <a href="http://liaoqing1999.github.io/2020/09/29/ding-shi-ren-wu-quartz-guan-li-he-ri-zhi/">http://liaoqing1999.github.io/2020/09/29/ding-shi-ren-wu-quartz-guan-li-he-ri-zhi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -550,7 +1056,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/Quartz/">
+                                    <span class="chip bg-color">Quartz</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -716,46 +1226,50 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/07/04/eclipse-chang-yong-kuai-jie-jian/">
+                <a href="/2020/09/29/ding-shi-ren-wu-quartz-guan-li-he-ri-zhi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="eclipse常用快捷键">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="定时任务quartz 管理和日志">
                         
-                        <span class="card-title">eclipse常用快捷键</span>
+                        <span class="card-title">定时任务quartz 管理和日志</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            eclipse常用快捷键编辑Ctrl+1    快速修复（最经典的快捷键,就不用多说了，可以解决很多问题，比如import类、try catch包围等）Ctrl+Shift+F    格式化当前代码Ctrl+Shift+M    添加类的i
+                            定时任务quartz 管理和日志前言上一篇介绍了quartz的结构和基础用法，现在则是利用反射来实现定时任务的抽取，实现动态配置定时任务和相关日志管理
+思路两个实体任务表和任务日志表。
+任务表存放：id、任务名、任务组名、调用类名方法名、调
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-04
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-29
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/eclipse/" class="post-category">
-                                    eclipse
+                            <a href="/categories/Quartz/" class="post-category">
+                                    Quartz
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/eclipse/">
-                        <span class="chip bg-color">eclipse</span>
+                    <a href="/tags/Quartz/">
+                        <span class="chip bg-color">Quartz</span>
                     </a>
                     
                 </div>
@@ -766,37 +1280,50 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/06/16/hello-world/">
+                <a href="/2020/09/29/ding-shi-ren-wu-quartz/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="定时任务quartz">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">定时任务quartz</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                            定时任务Quartz框架前言最近工作上接触到了定时任务，开始了解Quartz框架
+参考链接W3Cschool文档：https://www.w3cschool.cn/quartz_doc/
+Quartz官方地址：http://www.quar
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-16
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-29
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Liao Qing
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Quartz/" class="post-category">
+                                    Quartz
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Quartz/">
+                        <span class="chip bg-color">Quartz</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
