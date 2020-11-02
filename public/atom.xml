@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://liaoqing1999.github.io/"/>
-  <updated>2020-09-29T06:48:16.306Z</updated>
+  <updated>2020-11-02T02:58:18.062Z</updated>
   <id>http://liaoqing1999.github.io/</id>
   
   <author>
@@ -15,6 +15,60 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>createNewFile方法java.io.IOException问题</title>
+    <link href="http://liaoqing1999.github.io/2020/11/02/java-io-ioexception-wen-ti/"/>
+    <id>http://liaoqing1999.github.io/2020/11/02/java-io-ioexception-wen-ti/</id>
+    <published>2020-11-02T02:46:09.000Z</published>
+    <updated>2020-11-02T02:58:18.062Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;createNewFile方法引起的java-io-IOException问题&quot;&gt;&lt;a href=&quot;#createNewFile方法引起的java-io-IOException问题&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="java" scheme="http://liaoqing1999.github.io/categories/java/"/>
+    
+    
+      <category term="java" scheme="http://liaoqing1999.github.io/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java代理</title>
+    <link href="http://liaoqing1999.github.io/2020/10/26/java-dai-li/"/>
+    <id>http://liaoqing1999.github.io/2020/10/26/java-dai-li/</id>
+    <published>2020-10-26T01:43:34.000Z</published>
+    <updated>2020-11-02T02:47:43.354Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Java代理&quot;&gt;&lt;a href=&quot;#Java代理&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="java" scheme="http://liaoqing1999.github.io/categories/java/"/>
+    
+    
+      <category term="java" scheme="http://liaoqing1999.github.io/tags/java/"/>
+    
+  </entry>
   
   <entry>
     <title>定时任务quartz 管理和日志</title>
