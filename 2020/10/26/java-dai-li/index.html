@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, 个人博客">
+    <meta name="keywords" content="java代理, 个人博客">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | 个人博客</title>
+    <title>java代理 | 个人博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -309,12 +309,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">java代理</h1>
                 </div>
             </div>
         </div>
@@ -429,12 +429,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/java/">
+                                <span class="chip bg-color">java</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/java/" class="post-category">
+                                java
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -443,28 +456,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-06-16
+                    2020-10-26
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-06-16
+                    2020-11-02
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    73
+                    444
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -479,15 +492,56 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server</code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate</code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy</code></pre>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+                <h1 id="Java代理"><a href="#Java代理" class="headerlink" title="Java代理"></a>Java代理</h1><p>最近在代码中遇到了需要后端调用第三方接口，但是由于公司电脑存在代理，所以需要在代码中设置代理，才能够调通。</p>
+<h2 id="使用HttpHost设置代理"><a href="#使用HttpHost设置代理" class="headerlink" title="使用HttpHost设置代理"></a>使用HttpHost设置代理</h2><p>HttpHost是org.apache.http.HttpHost下的包</p>
+<p>当我使用HttpPost或其他请求方法时，可以使用以下代码设置代理。</p>
+<pre><code>        HttpPost httpPost = new HttpPost(url);
+        //代理IP 端口号
+          HttpHost proxy = new HttpHost(&quot;127.0.0.1&quot;, 808);
+        RequestConfig requestConfig = RequestConfig.custom()
+                .setProxy(proxy)
+                .setConnectTimeout(10000)
+                .setSocketTimeout(10000)
+                .setConnectionRequestTimeout(3000)
+                .build();
+        httpPost.setConfig(requestConfig);
+        StringEntity entity = new StringEntity(jsonBody);
+        httpPost.setHeader(&quot;Content-Type&quot;, &quot;application/x-www-form-urlencoded;charset=utf-8&quot;);
+        httpPost.setEntity(entity);
+        CloseableHttpResponse response = httpClient.execute(httpPost);
+        String jsonStr = EntityUtils.toString(response.getEntity());</code></pre><h2 id="使用System-setProperty设置全局代理"><a href="#使用System-setProperty设置全局代理" class="headerlink" title="使用System.setProperty设置全局代理"></a>使用System.setProperty设置全局代理</h2><p>可以使用System.setProperty设置相关代理属性，全局有效</p>
+<pre><code>System.setProperty(&quot;proxyType&quot;, &quot;4&quot;);
+// 端口
+System.setProperty(&quot;proxyPort&quot;, &quot;808&quot;);
+// IP
+System.setProperty(&quot;proxyHost&quot;, &quot;127.0.0.1&quot;);
+System.setProperty(&quot;proxySet&quot;, &quot;true&quot;);
+// 用户名
+System.setProperty(&quot;proxyUserName&quot;, username);
+// 密码
+System.setProperty(&quot;proxyPassword&quot;, password);
+
+
+// 自动使用系统代理（IE）
+ System.setProperty(&quot;java.net.useSystemProxies&quot;, &quot;true&quot;);</code></pre><h2 id="使用Proxy类设置代理"><a href="#使用Proxy类设置代理" class="headerlink" title="使用Proxy类设置代理"></a>使用Proxy类设置代理</h2><pre><code>URL urlClient = new URL(url);
+Proxy proxy= new Proxy(Proxy.Type.HTTP,newInetSocketAddress(&quot;127.0.0.1&quot;,808)); 
+URLConnection connection =url.openConnection(proxy);
+// 设置通用的请求属性
+httpsConn.setRequestProperty(&quot;accept&quot;, &quot;*/*&quot;);
+httpsConn.setRequestProperty(&quot;connection&quot;, &quot;Keep-Alive&quot;);
+httpsConn.setRequestProperty(&quot;user-agent&quot;,
+&quot;Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1;SV1)&quot;);
+// 发送POST请求必须设置如下两行
+httpsConn.setDoOutput(true);
+httpsConn.setDoInput(true);
+// 获取URLConnection对象对应的输出流
+out = new PrintWriter(httpsConn.getOutputStream());
+// 发送请求参数
+out.print(param);
+// flush输出流的缓冲
+out.flush();
+// 定义BufferedReader输入流来读取URL的响应
+in = new BufferedReader(new InputStreamReader(httpsConn.getInputStream()));</code></pre><h2 id="sdk中代理设置"><a href="#sdk中代理设置" class="headerlink" title="sdk中代理设置"></a>sdk中代理设置</h2><p>一般sdk中做了对代理的封装，注意查找他们设置代理的方法</p>
 
             </div>
             <hr/>
@@ -513,7 +567,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://liaoqing1999.github.io/2020/06/16/hello-world/">http://liaoqing1999.github.io/2020/06/16/hello-world/</a>
+                    <a href="http://liaoqing1999.github.io/2020/10/26/java-dai-li/">http://liaoqing1999.github.io/2020/10/26/java-dai-li/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -550,7 +604,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/java/">
+                                    <span class="chip bg-color">java</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -720,31 +778,33 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/07/04/eclipse-chang-yong-kuai-jie-jian/">
+                <a href="/2020/11/02/java-io-ioexception-wen-ti/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="eclipse常用快捷键">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="createNewFile方法java.io.IOException问题">
                         
-                        <span class="card-title">eclipse常用快捷键</span>
+                        <span class="card-title">createNewFile方法java.io.IOException问题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            eclipse常用快捷键编辑Ctrl+1    快速修复（最经典的快捷键,就不用多说了，可以解决很多问题，比如import类、try catch包围等）Ctrl+Shift+F    格式化当前代码Ctrl+Shift+M    添加类的i
+                            createNewFile方法引起的java.io.IOException问题报错java.io.IOException: 系统找不到指定的路径原因：
+createNewFile这个方法只能在一层目录下创建文件，不能跳级创建
+mkdir(s
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-04
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-02
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/eclipse/" class="post-category">
-                                    eclipse
+                            <a href="/categories/java/" class="post-category">
+                                    java
                                 </a>
                             
                             
@@ -754,8 +814,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/eclipse/">
-                        <span class="chip bg-color">eclipse</span>
+                    <a href="/tags/java/">
+                        <span class="chip bg-color">java</span>
                     </a>
                     
                 </div>
@@ -766,37 +826,50 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/06/16/hello-world/">
+                <a href="/2020/09/29/ding-shi-ren-wu-quartz-guan-li-he-ri-zhi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="定时任务quartz 管理和日志">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">定时任务quartz 管理和日志</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                            定时任务quartz 管理和日志前言上一篇介绍了quartz的结构和基础用法，现在则是利用反射来实现定时任务的抽取，实现动态配置定时任务和相关日志管理
+思路两个实体任务表和任务日志表。
+任务表存放：id、任务名、任务组名、调用类名方法名、调
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-16
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-29
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Liao Qing
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Quartz/" class="post-category">
+                                    Quartz
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Quartz/">
+                        <span class="chip bg-color">Quartz</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
